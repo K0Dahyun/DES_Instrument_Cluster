@@ -60,5 +60,5 @@ The speed data display module is responsible for displaying speed data on the sc
 4. The preprocessed data is displayed in a user-friendly format on the GUI part of the Qt application.
 5. This GUI is displayed to the user through an LCD display connected to the Raspberry Pi.
 
-<img src="https://github.com/K0Dahyun/Project-2/assets/119277948/362cce4e-5380-4ab8-a6a0-3b87dde8499f" width="200" height="400"/>
+<img src="https://github.com/K0Dahyun/Project-2/assets/119277948/362cce4e-5380-4ab8-a6a0-3b87dde8499f" width="400" height="600"/>
 
