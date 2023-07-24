@@ -56,6 +56,7 @@ The speed data display module is responsible for displaying speed data on the sc
 # Specific System Architecture
 
 <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/362cce4e-5380-4ab8-a6a0-3b87dde8499f" width="600" height="600"/>
+
 ## Part-1
 The speed sensor's rotation plate should rotate at the same rate as the tire. Therefore, the rotation plate and the tire must be perfectly attached.
   Solution1 - Enlarge the hole in the rotation plate to connect it to the tire's rotating shaft. 
