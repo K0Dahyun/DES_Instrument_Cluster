@@ -53,12 +53,12 @@ The CAN communication module communicates with the speed sensor via the CAN bus.
 The speed data display module is responsible for displaying speed data on the screen. It takes speed data from the main application and displays it in an easily readable format on the screen. This module can be customized to display speed data in various ways, such as through a speedometer or numerical display.
 
 
-## Simple Summary
-1. The speed sensor is connected to the Arduino.
-2. The Raspberry Pi receives data from the Arduino using the CAN protocol.
-3. This data is processed by a Qt application running on the Raspberry Pi, where the data is preprocessed.
-4. The preprocessed data is displayed in a user-friendly format on the GUI part of the Qt application.
-5. This GUI is displayed to the user through an LCD display connected to the Raspberry Pi.
+# Specific System Architecture
 
 <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/362cce4e-5380-4ab8-a6a0-3b87dde8499f" width="600" height="600"/>
+## Part-1
+The speed sensor's rotation plate should rotate at the same rate as the tire. Therefore, the rotation plate and the tire must be perfectly attached.
+  Solution1 - Enlarge the hole in the rotation plate to connect it to the tire's rotating shaft. 
+  Solution2 - Connect a rod to the bolt on the outside of the tire, and then connect that rod to the rotation plate.
 
+## Par
