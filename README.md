@@ -34,3 +34,31 @@ The Qt application on the RPi takes this data and displays it in an easily reada
 The CAN bus is a communication protocol that allows multiple devices to communicate with each other and exchange data. In the case of the PiRacer dashboard, the speed sensor and the RPi use the CAN bus to exchange speed data. The CAN bus makes the data transmission between the speed sensor and the RPi reliable and efficient.
 
 Overall, the system architecture of the PiRacer dashboard application is designed to provide a simple and user-friendly interface for monitoring vehicle speed. The combination of hardware and software components work together to provide users with accurate and real-time speed data.
+
+
+##Software Design
+The software design of the PiRacer dashboard application is based on the Qt framework, a widely used cross-platform application development framework.
+
+In this project, Qt will be used in the following ways:
+
+- GUI Development: It designs and implements the user interface of the dashboard application. For instance, it displays gauges like the speedometer, odometer, etc., in a digital format on the screen.
+- Data Processing: It processes data received from the speed sensor via the CAN bus. After converting the data into an appropriate format, it displays it on the screen.
+- Communication with Hardware: Since Qt supports various communication protocols, it handles communication with the Raspberry Pi, the CAN bus, and the speed sensor.
+The software design of the PiRacer dashboard consists of several key components, such as the main application, CAN communication module, and speed data display module.
+
+The main application manages the overall functionality of the dashboard. It creates the GUI, manages communication with the speed sensor via the CAN bus, and displays speed data on the screen.
+
+The CAN communication module communicates with the speed sensor via the CAN bus. It retrieves speed data from the speed sensor and passes it to the main application for display. This module uses the CAN library provided by Qt to communicate with the speed sensor.
+
+The speed data display module is responsible for displaying speed data on the screen. It takes speed data from the main application and displays it in an easily readable format on the screen. This module can be customized to display speed data in various ways, such as through a speedometer or numerical display.
+
+
+## Simple Summary
+1. The speed sensor is connected to the Arduino.
+2. The Raspberry Pi receives data from the Arduino using the CAN protocol.
+3. This data is processed by a Qt application running on the Raspberry Pi, where the data is preprocessed.
+4. The preprocessed data is displayed in a user-friendly format on the GUI part of the Qt application.
+5. This GUI is displayed to the user through an LCD display connected to the Raspberry Pi.
+
+
+
