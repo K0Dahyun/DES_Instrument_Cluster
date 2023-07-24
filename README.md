@@ -62,3 +62,5 @@ The speed data display module is responsible for displaying speed data on the sc
 
 ![image](https://github.com/K0Dahyun/Project-2/assets/119277948/362cce4e-5380-4ab8-a6a0-3b87dde8499f)
 
+<img src="이미지주소.png" width="200" height="400"/>
+
