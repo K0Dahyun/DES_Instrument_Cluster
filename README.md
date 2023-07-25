@@ -57,9 +57,30 @@ The speed data display module is responsible for displaying speed data on the sc
 
 <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/362cce4e-5380-4ab8-a6a0-3b87dde8499f" width="600" height="600"/>
 
-## Part-1
-The speed sensor's rotation plate should rotate at the same rate as the tire. Therefore, the rotation plate and the tire must be perfectly attached.
-  Solution1 - Enlarge the hole in the rotation plate to connect it to the tire's rotating shaft. 
-  Solution2 - Connect a rod to the bolt on the outside of the tire, and then connect that rod to the rotation plate.
+## Part_1 : Attach the speed sensor's rotating plate to the tire's rotating axis.
+1. The speed sensor's rotation plate should rotate at the same rate as the tire. Therefore, the rotation plate and the tire must be perfectly attached.
+ - Solution1 - Enlarge the hole in the rotation plate to connect it to the tire's rotating shaft. 
+ - Solution2 - Connect a rod to the bolt on the outside of the tire, and then connect that rod to the rotation plate.
+2. fix the Speed sensor
 
-## Par
+
+## Part-2 : Connect speed sensor and Arduino
+1. Verify that the Arduino is properly receiving data from the speed sensor.
+2. Create a calculation code on Arduino that computes the speed from the data received from the speed sensor.
+3. Check that the Arduino's output is correctly showing a value corresponding to the speed.
+
+
+## Part-3 : Arduino and Raspberry Pi communicate using the CAN protocol.
+1. Connect Arduino(including speed data) and CAN Module
+2. We have two options:
+If we can obtain a shield for the Raspberry Pi, we'll choose solution 1; otherwise, we'll go with solution 2.
+Solution 1: Connect the Raspberry Pi with a CAN Hat, and connect the Arduino with a CAN Shield.
+Solution 2: Connect the Raspberry Pi with a CAN module, and connect the Arduino with a CAN Shield.
+3. The Arduino and Raspberry Pi communicate via the CAN protocol.
+4. Verify that the speed data received from the Raspberry Pi is correct.
+   
+If you want to study CAN communication first, you can try CAN communication between two Arduinos. This, while different from the project topic, allows for a simple test and understanding of the CAN communication method.
+### [Reference](https://github.com/autowp/arduino-mcp2515/blob/master/README.md)
+
+
+
