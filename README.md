@@ -74,6 +74,7 @@ The speed data display module is responsible for displaying speed data on the sc
 1. Connect Arduino(including speed data) and CAN Module
 2. We have two options:
 If we can obtain a shield for the Raspberry Pi, we'll choose solution 1; otherwise, we'll go with solution 2.
+
 Solution 1: Connect the Raspberry Pi with a CAN Hat, and connect the Arduino with a CAN Shield.
 Solution 2: Connect the Raspberry Pi with a CAN module, and connect the Arduino with a CAN Shield.
 3. The Arduino and Raspberry Pi communicate via the CAN protocol.
