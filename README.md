@@ -83,4 +83,18 @@ If you want to study CAN communication first, you can try CAN communication betw
 ### [Reference](https://github.com/autowp/arduino-mcp2515/blob/master/README.md)
 
 
+## Part-4 : Create a Qt dashboard GUI using cross-compilation.
+1. Visualize the vehicle dashboard GUI using the Qt framework on a standard laptop, not the Raspberry Pi.
+2. Create code to display the dashboard correctly according to the data type received by the Raspberry Pi.
+3. Create an executable file that can be run on the Raspberry Pi by cross-compiling.
+4. Copy the code to the Raspberry Pi, execute it, and check if it runs correctly.
+### [Crosscompile in Qt](https://www.interelectronix.com/kr/keuloseu-keompaileul-wihae-ubuntu-20-ltseseo-qt-creator-guseong.html)
+### [Dashboard Example in Qt](https://doc.qt.io/qt-5/qtquickextras-dashboard-example.html)
+
+
+## Part-5 : Implement speed data visualization on the LCD.
+1. Connect the LCD to the Raspberry Pi.
+2. Display the Raspberry Pi's GUI on the LCD.
+
+
 
