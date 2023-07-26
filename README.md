@@ -69,6 +69,7 @@ The speed data display module is responsible for displaying speed data on the sc
 2. Verify that the Arduino is properly receiving data from the Ultrasonic sensor.
 2. Create a calculation code on Arduino that computes the RPM and distance from the data received from the sensor.
 3. Check that the Arduino's output is correctly showing a value corresponding to the speed.
+   
 [Speed&Ultrasonic](https://github.com/K0Dahyun/Project-2/tree/main/Speed%20and%20Ultrasonic)
    
 
