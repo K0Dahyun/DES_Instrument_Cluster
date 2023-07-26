@@ -118,6 +118,9 @@ At this point, the interrupt pin number is specified as 2. If you have connected
 
 
 ## 2. Ultrasonic Sensor(Model : HC-SR04)
+The HC-SR04 Ultrasonic Sensor operates by using ultrasonic waves to measure distance. 
+In the reception phase, the sensor measures the time it takes for the ultrasonic waves to bounce back after hitting an object. 
+Using the speed of sound and the measured time, the sensor calculates the distance to the object. 
 Similarly, connect as shown in the picture below.
 
 ![image](https://github.com/K0Dahyun/Project-2/assets/119277948/c2f3eb9b-9ecf-47c3-a7be-74f8253c4b4b)
