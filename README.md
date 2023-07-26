@@ -66,17 +66,14 @@ The speed data display module is responsible for displaying speed data on the sc
 
 ## Part-2 : Connect speed sensor and Arduino
 1. Verify that the Arduino is properly receiving data from the speed sensor.
-2. Create a calculation code on Arduino that computes the speed from the data received from the speed sensor.
+2. Verify that the Arduino is properly receiving data from the Ultrasonic sensor.
+2. Create a calculation code on Arduino that computes the RPM and distance from the data received from the sensor.
 3. Check that the Arduino's output is correctly showing a value corresponding to the speed.
-
+   
 
 ## Part-3 : Arduino and Raspberry Pi communicate using the CAN protocol.
-1. Connect Arduino(including speed data) and CAN Module
-2. We have two options:
-If we can obtain a shield for the Raspberry Pi, we'll choose solution 1; otherwise, we'll go with solution 2.
-
-Solution 1: Connect the Raspberry Pi with a CAN Hat, and connect the Arduino with a CAN Shield.
-Solution 2: Connect the Raspberry Pi with a CAN module, and connect the Arduino with a CAN Shield.
+1. Connect Arduino(including speed and distance data) and CAN Shield.
+2. Connect the Raspberry Pi with a CAN Hat, and connect the Arduino with a CAN Shield.
 3. The Arduino and Raspberry Pi communicate via the CAN protocol.
 4. Verify that the speed data received from the Raspberry Pi is correct.
    
