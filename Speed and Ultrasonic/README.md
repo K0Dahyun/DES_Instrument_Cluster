@@ -47,5 +47,5 @@ Before starting this chapter, I recommend you study what CAN communication is.
 
 First, we test CAN communication between Arduino Uno and Nano.
 Model
-Sender : Arduino Uno() + CAN-Bus Shield V2
+Sender : Arduino Uno + CAN-Bus Shield V2
 Recv : Arduino Nano HIMALAYA + 2-CH CAN FD 
