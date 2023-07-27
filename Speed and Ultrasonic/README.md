@@ -17,6 +17,7 @@ In this section, we will connect the speed sensor and the LCD together. However,
 
 ### Second, run the code below to check if the data is being received correctly.
 [speed_sensor.ino](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/speed_sensor/speed_sensor.ino)
+[speed_sensor.ino](https://github.com/K0Dahyun/Project-2/tree/main/Speed%20and%20Ultrasonic/speed_sensor_LCD)
 
 These are the necessary libraries and reference links.
 [l2C](https://drive.google.com/file/d/15-vg0hSKDJ9EafxvWnjkg-o3WERHccBx/view?usp=sharing)
@@ -29,10 +30,22 @@ These are the necessary libraries and reference links.
 The HC-SR04 Ultrasonic Sensor operates by using ultrasonic waves to measure distance. 
 In the reception phase, the sensor measures the time it takes for the ultrasonic waves to bounce back after hitting an object. 
 Using the speed of sound and the measured time, the sensor calculates the distance to the object. 
-Similarly, connect as shown in the picture below.
-
-
+### First, connect as shown in the picture below.
 <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/c2f3eb9b-9ecf-47c3-a7be-74f8253c4b4b" width="400" height="300"/>
-And, You can check 
+
+
+### Second, You can run the code below to check if the sensor is working correctly.
+[Ultrasonic_sensor](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/Ultrasonic_sensor/Ultrasonic_sensor/Ultrasonic_sensor.ino)
 [Reference](https://www.brainy-bits.com/post/using-the-hc-sr04-ultrasonic-range-sensor-with-an-arduino)
 
+**At this point, ECHOPIN and TRIGPIN are the pin numbers that you connected to the Arduino. However, it is recommended to use pin numbers from 3 to 8. Depending on the module, the pin number may already be determined, and the pin numbers should not overlap.**
+
+
+## 3. CAN Communicate including sensor data between Arduino and Arduino
+Our goal is to communicate via CAN protocol between Raspberry Pi and Arduino. However, we first attempt CAN communication between two Arduinos.
+Before starting this chapter, I recommend you study what CAN communication is.
+
+First, we test CAN communication between Arduino Uno and Nano.
+Model
+Sender : Arduino Uno() + CAN-Bus Shield V2
+Recv : Arduino Nano HIMALAYA + 2-CH CAN FD 
