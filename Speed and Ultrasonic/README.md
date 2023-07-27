@@ -45,7 +45,23 @@ Using the speed of sound and the measured time, the sensor calculates the distan
 Our goal is to communicate via CAN protocol between Raspberry Pi and Arduino. However, we first attempt CAN communication between two Arduinos.
 Before starting this chapter, I recommend you study what CAN communication is.
 
-First, we test CAN communication between Arduino Uno and Nano.
-Model
-Sender : Arduino Uno + CAN-Bus Shield V2
-Recv : Arduino Nano HIMALAYA + 2-CH CAN FD 
+### First, we test CAN communication between Arduino Uno and Nano.
+
+| Arduino Uno       | CAN-Bus Shield V2       |
+| :-------------:|:-------------: |
+| <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/44f1cfcf-119d-409c-ae7f-25e8c696cb19" width="200" /> | <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/2fdb748a-a24b-45be-95ac-43f2b8c1cc63" width="200" /> |
+
+| Arduino Nano       | CAN MCP2515       |
+| :-------------:|:-------------: |
+| <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/6788c7c0-271d-4c74-a048-2d0491f66015" width="200" /> | <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/7b87e1d3-e0cc-4ce3-9334-a5b466a3f42a" width="200" /> |
+
+The wiring is the same as before, you just need to newly connect the High and Low of the CAN.
+| CAN-Bus Shield V2 | CAN MCP2515 |
+| ------------ | ------------- |
+| CAN_H | CAN_H  |
+| CAN_L | CAN_L  |
+
+
+You can verify the CAN communication through the following code. The Arduino Uno calculates the RPM and distance values and transmits them, while the Arduino Nano receives these data.
+[CAN_Speed_Ultrasonic](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/CAN_speed_Ultrasonic/CAN_speed_distance/CAN_speed_distance.ino)
+
