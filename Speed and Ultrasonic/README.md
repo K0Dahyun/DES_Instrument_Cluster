@@ -9,6 +9,7 @@ In this section, we will see how to connect and use an infrared speed sensor bas
 The speed sensor uses a disc with holes (encoder disc) to block the infrared beam, thus by counting the number of times the sensors goes from Low to High we can calculate the number of revolution for a given time period.
 
 In this section, we will connect the speed sensor and the LCD together. However, the final goal is to connect the LCD to the Raspberry Pi, not the Arduino. The LCD connection discussed here is merely a test.
+[Reference]([https://www.brainy-bits.com/post/how-to-use-a-speed-sensor-with-arduino](https://srituhobby.com/ir-infrared-speed-sensor-with-arduino-how-does-work-ir-speed-sensor/?utm_content=cmp-true))
 
 
 ### First, we need to wire it as shown in the picture below.
