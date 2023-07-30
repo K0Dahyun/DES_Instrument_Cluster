@@ -56,6 +56,13 @@ Before starting this chapter, I recommend you study what CAN communication is.
 | :-------------:|:-------------: |
 | <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/6788c7c0-271d-4c74-a048-2d0491f66015" width="200" /> | <img src="https://github.com/K0Dahyun/Project-2/assets/119277948/7b87e1d3-e0cc-4ce3-9334-a5b466a3f42a" width="200" /> |
 
+
+If you are using mcp2515, you need to download [here](https://github.com/autowp/arduino-mcp2515)  library.
+
+Using a CAN shield eliminates the need for complex wiring, but when connecting a CAN module to an Arduino Nano, wiring is required. Connect as shown in the picture below.
+
+<img src="https://github.com/K0Dahyun/Project-2/assets/119277948/bddd10a2-3c45-43f7-bbcd-61695f267226" width="400" height="300"/>
+
 The wiring is the same as before, you just need to newly connect the High and Low of the CAN.
 | CAN-Bus Shield V2 | CAN MCP2515 |
 | ------------ | ------------- |
