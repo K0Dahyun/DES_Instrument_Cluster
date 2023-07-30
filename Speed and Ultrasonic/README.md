@@ -17,13 +17,14 @@ In this section, we will connect the speed sensor and the LCD together. However,
 
 ### Second, run the code below to check if the data is being received correctly.
 [speed_sensor.ino](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/speed_sensor/speed_sensor.ino)
-[speed_sensor.ino](https://github.com/K0Dahyun/Project-2/tree/main/Speed%20and%20Ultrasonic/speed_sensor_LCD)
+
+[speed_sensor_LCD.ino](https://github.com/K0Dahyun/Project-2/tree/main/Speed%20and%20Ultrasonic/speed_sensor_LCD)
 
 These are the necessary libraries and reference links.
 [l2C](https://drive.google.com/file/d/15-vg0hSKDJ9EafxvWnjkg-o3WERHccBx/view?usp=sharing)
 [Reference](https://srituhobby.com/ir-infrared-speed-sensor-with-arduino-how-does-work-ir-speed-sensor/?utm_content=cmp-true)
 
-**At this point, the interrupt pin number is specified as 2. If you have connected to a different pin, you need to modify _attachInterrupt(digitalPinToInterrupt(2), Pulse_Event, RISING);_**
+At this point, the interrupt pin number is specified as 2. If you have connected to a different pin, you need to modify _attachInterrupt(digitalPinToInterrupt(2), Pulse_Event, RISING);_**
 
 
 ## 2. Ultrasonic Sensor(Model : HC-SR04)
@@ -38,7 +39,7 @@ Using the speed of sound and the measured time, the sensor calculates the distan
 [Ultrasonic_sensor](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/Ultrasonic_sensor/Ultrasonic_sensor/Ultrasonic_sensor.ino)
 [Reference](https://www.brainy-bits.com/post/using-the-hc-sr04-ultrasonic-range-sensor-with-an-arduino)
 
-**At this point, ECHOPIN and TRIGPIN are the pin numbers that you connected to the Arduino. However, it is recommended to use pin numbers from 3 to 8. Depending on the module, the pin number may already be determined, and the pin numbers should not overlap.**
+At this point, ECHOPIN and TRIGPIN are the pin numbers that you connected to the Arduino. However, it is recommended to use pin numbers from 3 to 8. Depending on the module, the pin number may already be determined, and the pin numbers should not overlap.
 
 
 ## 3. CAN Communicate including sensor data between Arduino and Arduino
@@ -63,5 +64,7 @@ The wiring is the same as before, you just need to newly connect the High and Lo
 
 
 You can verify the CAN communication through the following code. The Arduino Uno calculates the RPM and distance values and transmits them, while the Arduino Nano receives these data.
-[CAN_Speed_Ultrasonic](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/CAN_speed_Ultrasonic/CAN_speed_distance/CAN_speed_distance.ino)
+Plus, _mcp2515.setBitrate(CAN_125KBPS,MCP_16MHZ);_
+Here, you need to modify _MCP_(yourClockSpeed)MHZ_ to match your Arduino's clock speed.
 
+[CAN_Speed_Ultrasonic](https://github.com/K0Dahyun/Project-2/blob/main/Speed%20and%20Ultrasonic/CAN_speed_Ultrasonic/CAN_speed_distance/CAN_speed_distance.ino)
