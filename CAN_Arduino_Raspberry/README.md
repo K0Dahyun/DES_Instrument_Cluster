@@ -4,6 +4,11 @@ First, we check the transmission and reception of random data without including 
 Once CAN communication is confirmed to be working, we transmit and receive data including sensor data.
 
 
+## Reference
+[2-CH_CAN_FD_HAT](https://www.waveshare.com/wiki/2-CH_CAN_FD_HAT)
+
+[github](https://github.com/SeeedDocument/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi)
+
 ## Materials required
 | Arduino Uno       | CAN-Bus Shield V2       |
 | :-------------:|:-------------: |
@@ -80,6 +85,7 @@ We have now completed the settings for CAN communication.
 We proceed with the CAN communication between the Arduino connected to the sensor and the Raspberry Pi that intends to receive the sensor data.
 
 First, execute the [CAN_send_data](https://github.com/K0Dahyun/Project-2/blob/main/CAN_Arduino_Raspberry/CAN_send_data/CAN_send_data.ino) code to transmit sensor data from the Arduino. 
+
 Then, on the Raspberry Pi, use the [CAN_recv_data](https://github.com/K0Dahyun/Project-2/blob/main/CAN_Arduino_Raspberry/CAN_recv_data/CAN_recv_data.py) code to confirm the reception of the data.
 
 
