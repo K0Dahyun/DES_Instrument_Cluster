@@ -74,5 +74,12 @@ Finally, the "candump can0" command outputs all CAN frames received on the "can0
 Therefore, looking at these commands as a whole, it can be seen as an example showing data being generated on "can0" and then received back on "can0". However, as the "can1" interface is also set up, similar operations can be performed on "can1" as well.
 
 
+## Communication betweeen Arduino and Raspberry
+We have now completed the settings for CAN communication. 
+
+We proceed with the CAN communication between the Arduino connected to the sensor and the Raspberry Pi that intends to receive the sensor data.
+
+First, execute the [CAN_send_data](https://github.com/K0Dahyun/Project-2/blob/main/CAN_Arduino_Raspberry/CAN_send_data/CAN_send_data.ino) code to transmit sensor data from the Arduino. 
+Then, on the Raspberry Pi, use the [CAN_recv_data](https://github.com/K0Dahyun/Project-2/blob/main/CAN_Arduino_Raspberry/CAN_recv_data/CAN_recv_data.py) code to confirm the reception of the data.
 
 
