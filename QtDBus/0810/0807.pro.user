@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 11.0.0, 2023-08-10T16:01:14. -->
+<!-- Written by QtCreator 11.0.0, 2023-08-11T21:00:30. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -236,8 +236,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/seame-workstation08/Project-2/QtDBus/0807/0807.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/seame-workstation08/Project-2/QtDBus/0807/0807.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/seame-workstation08/Project-2/QtDBus/0810/0807.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/seame-workstation08/Project-2/QtDBus/0810/0807.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

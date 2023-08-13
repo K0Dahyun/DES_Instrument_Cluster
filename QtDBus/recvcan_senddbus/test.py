@@ -1,6 +1,7 @@
 import can
 import dbus
 import dbus.service
+import time  # time 모듈 임포트
 
 class DataReceiver:
     def __init__(self):
@@ -18,6 +19,8 @@ if __name__ == "__main__":
     car_interface = dbus.Interface(service, "local.Car")
 
     receiver = DataReceiver()
-    data = receiver.receive_temp_data()
-
-    car_interface.setSpeed(data)
+    
+    while receiver.counter < 280:
+        data = receiver.receive_temp_data()
+        car_interface.setSpeed(data)
+        time.sleep(0.5) 
