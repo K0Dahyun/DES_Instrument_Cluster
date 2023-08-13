@@ -1,6 +1,9 @@
 #include "car.h"
+#include "car_adaptor.h"
+
 Car::Car(QObject *parent) : QObject(parent)
 {
+    new CarAdaptor(this);
     speed = 50.0;
     battery = 100.0;
 }
@@ -8,6 +11,7 @@ Car::Car(QObject *parent) : QObject(parent)
 void Car::setSpeed(qreal speed)
 {
     this->speed = speed;
+    emit speedChanged();
 }
 void Car::setBattery(qreal battery)
 {

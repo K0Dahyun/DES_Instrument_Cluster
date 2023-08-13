@@ -1,6 +1,4 @@
 #include <QApplication>
-#include <QDBusReply>
-#include <QDebug>
 
 #include "mainwindow.h"
 #include "car.h"
@@ -13,7 +11,7 @@ int main(int argc, char *argv[])
 
     DBusManager dbusmanager;
     Car *car = new Car();
-    dbusmanager.registerCar(car);
+    dbusmanager.registerObject(CAR_SERVICE_NAME,CAR_OBJECT_NAME,car);
 
     MainWindow w;
     w.show();

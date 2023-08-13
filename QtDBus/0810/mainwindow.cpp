@@ -25,9 +25,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::gui_update()
 {
-    //    return;
     QDBusReply<qreal> a = iface->call("getSpeed");
     qDebug()<<a.value();
-    //qDebug()<<car->getTemp();
-
 }

@@ -6,6 +6,7 @@
 class Car : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(int speed READ getSpeed NOTIFY speedChanged)
 public:
     explicit Car(QObject *parent = nullptr);
 public Q_SLOTS:
@@ -16,7 +17,8 @@ public Q_SLOTS:
 
     //Q_SIGNALS:
     //    Q_SCRIPTABLE qreal blabla();
-
+signals :
+    void speedChanged();
 private:
     float speed;
     float battery;

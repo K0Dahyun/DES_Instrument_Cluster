@@ -5,15 +5,14 @@
 #include <QDBusConnection>
 #include <QDBusInterface>
 
-#include "car.h"
-
 class DBusManager : public QObject
 {
     Q_OBJECT
 
 public:
     explicit DBusManager(QObject *parent=nullptr);
-    void registerCar(Car *car);
+    void registerObject(const QString &service, const QString &path, QObject *object);
+
 private:
     QDBusConnection connection;
 };

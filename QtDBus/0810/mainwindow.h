@@ -2,12 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-#include <QApplication>
 #include <QDBusInterface>
-#include <QWidget>
 #include <QTimer>
-#include <QDBusConnection>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
