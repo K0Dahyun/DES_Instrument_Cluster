@@ -5,9 +5,9 @@ Once CAN communication is confirmed to be working, we transmit and receive data 
 
 
 ## Reference
-[2-CH_CAN_FD_HAT](https://www.waveshare.com/wiki/2-CH_CAN_FD_HAT)
-
-[github](https://github.com/SeeedDocument/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi)
+#### [CAN_FD_HAT](https://www.waveshare.com/wiki/2-CH_CAN_FD_HAT)
+#### [2_Channel_CAN_BUS](https://github.com/SeeedDocument/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi)
+#### [arduino-mcp2515](https://github.com/autowp/arduino-mcp2515/blob/master/README.md)
 
 ## Materials required
 | Arduino Uno       | CAN-Bus Shield V2       |
