@@ -1,21 +1,12 @@
 # D-Bus: A Brief Overview
 D-Bus is a peer-to-peer, object-based messaging protocol.
-
 Objects and Paths: Every application using D-Bus has "objects," each with a unique "object path" for identification. To communicate, applications like A and B must connect to D-Bus, obtaining a unique "Bus name".
-
-Messaging: For A to message B, A uses B's Object path. D-Bus handles the relay based on this path.
-
-Interfaces: Each object can offer Interfaces, containing:
-
-Method: Functions an object can perform, callable by others. For example, object A might have a "make a call" method.
-
-Signal: Notifications or alerts from an object about specific events. Object A might emit a "incoming call" signal, for instance.
 
 Objects can have multiple interfaces, enabling a broad or grouped set of functionalities.
 
 
 # Mechanism
-![image](https://github.com/K0Dahyun/Project-2/assets/119277948/a4ca2926-c28b-4ab3-b452-5ef917ad0b76)
+<img src="https://github.com/K0Dahyun/Project-2/assets/119277948/a4ca2926-c28b-4ab3-b452-5ef917ad0b76" width="600" height="400"/>
 
 To enable communication between applications A and B, they first connect to D-Bus, each obtaining a unique "Bus name" for inter-application communication.
 
@@ -29,7 +20,7 @@ Hence, while the Bus Name is used to specify the target process for message disp
 
 
 # QtDbus
-- QDBusAbstractAdaptor: This class primarily serves to "link" or "connect" Qt objects to D-Bus. By inheriting and utilizing classes derived from this, specific methods, signals, and properties of a Qt object can be made accessible from D-Bus. In essence, it provides an interface of the object to D-Bus.
+- QDBusAbstractAdaptor : This class primarily serves to "link" or "connect" Qt objects to D-Bus. By inheriting and utilizing classes derived from this, specific methods, signals, and properties of a Qt object can be made accessible from D-Bus. In essence, it provides an interface of the object to D-Bus.
 
 - QDBusConnection: This class is responsible for managing D-Bus "connections". It is used for tasks such as registering objects in the D-Bus system or registering D-Bus services. Additionally, it offers functionalities like sending or receiving D-Bus messages.
 
@@ -39,9 +30,9 @@ In summary, QDBusAbstractAdaptor exposes the interface of Qt objects to D-Bus, Q
 
 
 # How to define Interface(Xml)
+A D-Bus interface file is an XML file that describes one or more D-Bus interfaces. It represents the most efficient way to describe the D-Bus API in a machine-readable manner.
 [D-Bus API Design Guidelines](https://dbus.freedesktop.org/doc/dbus-api-design.html)
 
-A D-Bus interface file is an XML file that describes one or more D-Bus interfaces. It represents the most efficient way to describe the D-Bus API in a machine-readable manner.
 
 ### QtDBus XML Compiler (qdbusxml2cpp)
 The QtDBus XML compiler is a tool that can be used to parse interface descriptions and generate static code representing the interface, which can then be utilized to call remote objects or implement the given interface. Reference
