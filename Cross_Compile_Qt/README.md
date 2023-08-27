@@ -126,6 +126,6 @@ SCRIPTS FOR RASPBERRY PI 4](https://www.interelectronix.com/kr/qt-raspberry-pi-4
     ```
 10. Install compiled files on the Raspberry
     ```c
-    rsync -avz --rsync-path="sudo rsync" qt5.15 pi@192.168.1.7:/usr/local/
+    rsync -avz --rsync-path="sudo rsync" file_name seame6@192.168.86.68:/home/seame6
      ```
    
