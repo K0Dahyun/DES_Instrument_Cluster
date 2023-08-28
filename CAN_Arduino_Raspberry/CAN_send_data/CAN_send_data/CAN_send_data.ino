@@ -84,9 +84,9 @@ void loop() {
   //Serial.print(type(Speed));
 
   canMsg.data[0] = RPM%256;
-  canMsg.data[1] = RPM/256.0;
+  canMsg.data[1] = RPM/256;
   canMsg.data[2] = Speed%256;
-  canMsg.data[3] = Speed/256.0;
+  canMsg.data[3] = Speed/256;
 
 /*
   for(int i=0;i<2;i++){

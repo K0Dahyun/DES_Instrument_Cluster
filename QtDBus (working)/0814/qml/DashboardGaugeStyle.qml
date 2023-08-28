@@ -171,7 +171,7 @@ CircularGaugeStyle {
             ctx.fill();
 
         }
-        antialiasing: true
+        /*antialiasing: true
         smooth: true
         transform: Rotation {
             id: rotation
@@ -203,7 +203,7 @@ CircularGaugeStyle {
                 rotation.angle = car.speed
 
              }
-          }
+          }*/
 
     }
     foreground: null

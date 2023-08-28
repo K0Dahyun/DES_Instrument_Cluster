@@ -38,7 +38,7 @@ class DataReceiver:
         
     def print_battery_report(self)-> int:
     	self.battery= piracer.get_battery_voltage()
-    	battery=(self.battery/3-2.5)*100/1.7
+    	battery=(self.battery/3-3.1)*100/1.1
     	return battery
     	
 

@@ -94,6 +94,7 @@ Window {
                 CircularGauge {
                     id: fuelGauge
                     value: valueSource.fuel
+                    minimumValue: 0
                     maximumValue: 100
                     y: parent.height / 2 - height / 2 - container.height * 0.01
                     width: parent.width*1
@@ -157,6 +158,7 @@ Window {
 
                 style: TachometerStyle {}
             }
+
         }
     }
 }

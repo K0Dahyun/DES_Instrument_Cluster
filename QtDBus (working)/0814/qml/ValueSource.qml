@@ -58,7 +58,7 @@ Item {
     property real rpm: car.rpm
     property real fuel: car.battery
 
-    property string gear: {
+    /*property string gear: {
         var g;
         if (kph == 0) {
             return "P";
@@ -80,7 +80,7 @@ Item {
         }
     }
     property bool start: true
-//! [0]
+*/
 
     SequentialAnimation {
         running: true
