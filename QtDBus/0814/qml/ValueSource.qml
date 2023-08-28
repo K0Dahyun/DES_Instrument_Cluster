@@ -50,12 +50,14 @@
 
 import QtQuick 2.2
 
+
 //! [0]
 Item {
     id: valueSource
     property real kph: car.speed
     property real rpm: 1
-    property real fuel: 0.85
+    property real fuel: car.battery
+
     property string gear: {
         var g;
         if (kph == 0) {
@@ -81,6 +83,7 @@ Item {
     property real temperature: 0.6
     property bool start: true
 //! [0]
+
 
     function randomDirection() {
         return Math.random() > 0.5 ? Qt.LeftArrow : Qt.RightArrow;
@@ -109,8 +112,8 @@ Item {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    from: 0
-                    to: 30
+//                    from: 0
+//                    to: 30
                     duration: 3000
                 }
                 NumberAnimation {
@@ -121,7 +124,17 @@ Item {
                     to: 6.1
                     duration: 3000
                 }
+
+                NumberAnimation {
+                target: valueSource
+                property: "fuel"
+                easing.type: Easing.InOutSine
+//                    from: 0
+//                    to: 30
+                //duration: 3000
+                }
             }
+        }
 //! [1]
             ParallelAnimation {
                 // We changed gears so we lost a bit of speed.
@@ -129,32 +142,48 @@ Item {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    from: 30
-                    to: 26
+                   // from: 30
+                    //to: 26
                     duration: 600
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    from: 6
-                    to: 2.4
+                    //from: 6
+                    //to: 2.4
+                    duration: 600
+                }
+                NumberAnimation {
+                    target: valueSource
+                    property: "fuel"
+                    easing.type: Easing.InOutSine
+                    //from: 6
+                    //to: 2.4
                     duration: 600
                 }
             }
             ParallelAnimation {
                 NumberAnimation {
+
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    to: 60
+                    //to: 60
                     duration: 3000
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    to: 5.6
+                    //to: 5.6
+                    duration: 3000
+                }
+                NumberAnimation {
+                    target: valueSource
+                    property: "fuel"
+                    easing.type: Easing.InOutSine
+                    //to: 5.6
                     duration: 3000
                 }
             }
@@ -164,30 +193,45 @@ Item {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    to: 56
+                    //to: 56
                     duration: 600
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    to: 2.3
+                    //to: 2.3
                     duration: 600
                 }
+                NumberAnimation {
+                    target: valueSource
+                    property: "fuel"
+                    easing.type: Easing.InOutSine
+                    //to: 2.3
+                    duration: 600
+                }
+
             }
             ParallelAnimation {
                 NumberAnimation {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    to: 100
+                    //to: 100
                     duration: 3000
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    to: 5.1
+                    //to: 5.1
+                    duration: 3000
+                }
+                NumberAnimation {
+                    target: valueSource
+                    property: "fuel"
+                    easing.type: Easing.InOutSine
+                    //to: 100
                     duration: 3000
                 }
             }
@@ -197,16 +241,24 @@ Item {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    to: 96
+                    //to: 96
                     duration: 600
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    to: 2.2
+                    //to: 2.2
                     duration: 600
                 }
+                NumberAnimation {
+                    target: valueSource
+                    property: "fuel"
+                    easing.type: Easing.InOutSine
+                    //to: 2.2
+                    duration: 600
+                }
+
             }
 
             ParallelAnimation {
@@ -214,19 +266,26 @@ Item {
                     target: valueSource
                     property: "kph"
                     easing.type: Easing.InOutSine
-                    to: 140
+                    //to: 140
                     duration: 3000
                 }
                 NumberAnimation {
                     target: valueSource
                     property: "rpm"
                     easing.type: Easing.InOutSine
-                    to: 6.2
+                    //to: 6.2
+                    duration: 3000
+                }
+                NumberAnimation {
+                    target: valueSource
+                    property: "fuel"
+                    easing.type: Easing.InOutSine
+                    //to: 6.2
                     duration: 3000
                 }
             }
 
-            // Start downshifting.
+            /*/ Start downshifting.
 
             // Fifth to fourth gear.
             ParallelAnimation {
@@ -328,6 +387,6 @@ Item {
             PauseAnimation {
                 duration: 5000
             }
-        }
+        } */
     }
 }

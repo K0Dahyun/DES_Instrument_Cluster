@@ -136,6 +136,7 @@ CircularGaugeStyle {
             anchors.top: speedText.bottom
             anchors.horizontalCenter: parent.horizontalCenter
         }
+
     }
 
     needle: Canvas {

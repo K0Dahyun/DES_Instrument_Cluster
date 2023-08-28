@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CarValue.qml</file>
+        <file>RadialBarShape.qml</file>
+    </qresource>
+</RCC>

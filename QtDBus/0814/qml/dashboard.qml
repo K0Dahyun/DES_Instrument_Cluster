@@ -57,15 +57,21 @@ import QtQuick.Extras 1.4
 Window {
     id: root
     visible: true
-    width: 1024
-    height: 600
-
+    width: 1280
+    height: 400
+    //visibility: Window.FullScreen
     color: "#161616"
     title: "Qt Quick Extras Demo"
 
     ValueSource {
         id: valueSource
     }
+    Image {
+                id: layered
+                width: 1280
+                height: 400
+                source: "qrc:/images/images.jpg"
+            }
 
     // Dashboards are typically in a landscape orientation, so we need to ensure
     // our height is never greater than our width.
@@ -98,15 +104,15 @@ Window {
                 CircularGauge {
                     id: fuelGauge
                     value: valueSource.fuel
-                    maximumValue: 1
+                    maximumValue: 100
                     y: parent.height / 2 - height / 2 - container.height * 0.01
-                    width: parent.width
-                    height: parent.height * 0.7
+                    width: parent.width*1
+                    height: parent.height *1
 
                     style: IconGaugeStyle {
                         id: fuelGaugeStyle
 
-                        icon: "qrc:/images/fuel-icon.png"
+                        icon: "qrc:/images/battery.png"
                         minWarningColor: Qt.rgba(0.5, 0, 0, 1)
 
                         tickmarkLabel: Text {
@@ -116,9 +122,30 @@ Window {
                             text: styleData.value === 0 ? "E" : (styleData.value === 1 ? "F" : "")
                         }
                     }
+                    Text {
+                        id: batteryText
+                        font.pixelSize: tachometerStyle.toPixels(0.3)
+                        text: bat
+                        color: "white"
+                        horizontalAlignment: Text.Alignleft
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.top: parent.verticalCenter
+                        anchors.topMargin: 1
+
+                        readonly property int bat: valueSource.fuel
+                    }
+
+
+                    Text {
+                        text: "%"
+                        color: "white"
+                        font.pixelSize: tachometerStyle.toPixels(0.01)
+                        anchors.top: batteryText.bottom
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
                 }
 
-                CircularGauge {
+               /* CircularGauge {
                     value: valueSource.temperature
                     maximumValue: 1
                     width: parent.width
@@ -138,7 +165,7 @@ Window {
                             text: styleData.value === 0 ? "C" : (styleData.value === 1 ? "H" : "")
                         }
                     }
-                }
+                }*/
             }
 
             CircularGauge {

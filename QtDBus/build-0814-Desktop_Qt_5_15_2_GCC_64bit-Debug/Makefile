@@ -223,7 +223,6 @@ DIST          = ../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
-		../0814/.qmake.stash \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -418,7 +417,6 @@ Makefile: ../0814/0814.pro ../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.con
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -600,7 +598,6 @@ Makefile: ../0814/0814.pro ../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.con
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -680,7 +677,9 @@ qrc_dashboard.cpp: ../0814/dashboard.qrc \
 		../0814/qml/DashboardGaugeStyle.qml \
 		../0814/qml/TachometerStyle.qml \
 		../0814/qml/ValueSource.qml \
+		../0814/images/battery.png \
 		../0814/images/temperature-icon.png \
+		../0814/images/images.jpg \
 		../0814/images/fuel-icon.png \
 		../0814/fonts/LICENSE \
 		../0814/fonts/DejaVuSans.ttf
@@ -1392,7 +1391,8 @@ car.o: ../0814/car.cpp ../0814/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qdbusservicewatcher.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qdbusunixfiledescriptor.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qdbusvirtualobject.h \
-		../../../Qt/5.15.2/gcc_64/include/QtDBus/qtdbusversion.h
+		../../../Qt/5.15.2/gcc_64/include/QtDBus/qtdbusversion.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../0814/car.cpp
 
 main.o: ../0814/main.cpp ../../../Qt/5.15.2/gcc_64/include/QtGui/QGuiApplication \

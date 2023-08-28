@@ -2,7 +2,10 @@
 <node>
   <interface name="local.Car">
     <property name="speed" type="i" access="read"/>
+    <property name="battery" type="i" access="read"/>
     <signal name="speedChanged">
+    </signal>
+    <signal name="batteryChanged">
     </signal>
     <method name="setSpeed">
       <arg name="speed" type="d" direction="in"/>

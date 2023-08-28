@@ -33,6 +33,12 @@ CarAdaptor::~CarAdaptor()
     // destructor
 }
 
+int CarAdaptor::battery() const
+{
+    // get the value of property battery
+    return qvariant_cast< int >(parent()->property("battery"));
+}
+
 int CarAdaptor::speed() const
 {
     // get the value of property speed

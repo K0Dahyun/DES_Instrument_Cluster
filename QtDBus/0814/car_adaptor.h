@@ -33,7 +33,9 @@ class CarAdaptor: public QDBusAbstractAdaptor
     Q_CLASSINFO("D-Bus Introspection", ""
 "  <interface name=\"local.Car\">\n"
 "    <property access=\"read\" type=\"i\" name=\"speed\"/>\n"
+"    <property access=\"read\" type=\"i\" name=\"battery\"/>\n"
 "    <signal name=\"speedChanged\"/>\n"
+"    <signal name=\"batteryChanged\"/>\n"
 "    <method name=\"setSpeed\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n"
 "    </method>\n"
@@ -53,6 +55,9 @@ public:
     virtual ~CarAdaptor();
 
 public: // PROPERTIES
+    Q_PROPERTY(int battery READ battery)
+    int battery() const;
+
     Q_PROPERTY(int speed READ speed)
     int speed() const;
 
@@ -62,6 +67,7 @@ public Q_SLOTS: // METHODS
     void setBattery(double battery);
     void setSpeed(double speed);
 Q_SIGNALS: // SIGNALS
+    void batteryChanged();
     void speedChanged();
 };
 
