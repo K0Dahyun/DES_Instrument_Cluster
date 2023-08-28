@@ -64,31 +64,44 @@ The speed data display module is responsible for displaying speed data on the sc
 2. fix the Speed sensor
 
 
-## Part-2 : Connect speed sensor and Arduino
+## Part_2 : Connect speed sensor and Arduino
 1. Verify that the Arduino is properly receiving data from the speed sensor.
 2. Verify that the Arduino is properly receiving data from the Ultrasonic sensor.
 2. Create a calculation code on Arduino that computes the RPM and distance from the data received from the sensor.
 3. Check that the Arduino's output is correctly showing a value corresponding to the speed.
-   
-[Speed&Ultrasonic](https://github.com/K0Dahyun/Project-2/tree/main/Speed%20and%20Ultrasonic)
+### [Speed&Ultrasonic](https://github.com/K0Dahyun/Project-2/tree/main/Speed%20and%20Ultrasonic)
    
 
-## Part-3 : Arduino and Raspberry Pi communicate using the CAN protocol.
+## Part_3 : Arduino and Raspberry Pi communicate using the CAN protocol.
 1. Connect Arduino(including speed and distance data) and CAN Shield.
 2. Connect the Raspberry Pi with a CAN Hat, and connect the Arduino with a CAN Shield.
 3. The Arduino and Raspberry Pi communicate via the CAN protocol.
 4. Verify that the speed data received from the Raspberry Pi is correct.
    
 If you want to study CAN communication first, you can try CAN communication between two Arduinos. This, while different from the project topic, allows for a simple test and understanding of the CAN communication method.
-### [Reference](https://github.com/autowp/arduino-mcp2515/blob/master/README.md)
+### [CAN_Arduino_Raspberry](https://github.com/K0Dahyun/Project-2/tree/main/CAN_Arduino_Raspberry)
 
 
-## Part-4 : Create a Qt dashboard GUI using cross-compilation.
+## Part_4 : Setting cross-compilation between Raspberry and Ubuntu
+Cross-compilation is the process of creating a program or source code on one system to be used on another system, by changing the operating environment to make it executable.
+When developing embedded systems, it's essential to set up a cross-compilation environment. This is because the development environment is typically a PC, but the system where the executable runs is a different environment, namely the embedded system.
+
+##### Host: Ubuntu 20.04 LTS
+
+##### Target: Raspberry Pi 4 Linux 64-bit OS
+### [Cross_Compile_Qt](https://github.com/K0Dahyun/Project-2/tree/main/Cross_Compile_Qt)
+
+
+## Part_5 :Integrating Raspberry Pi and Qt via dbus
+After successfully transferring data between Arduino and Raspberry Pi using CAN communication, we now relay that data from the Raspberry Pi to the Qt application using D-Bus. D-Bus is a system that facilitates communication between various processes, enabling data communication with multiple applications, including Qt
+### [QtDBus](https://github.com/K0Dahyun/Project-2/tree/main/QtDBus)
+
+
+## Part_6 : Create a Qt dashboard GUI
 1. Visualize the vehicle dashboard GUI using the Qt framework on a standard laptop, not the Raspberry Pi.
 2. Create code to display the dashboard correctly according to the data type received by the Raspberry Pi.
 3. Create an executable file that can be run on the Raspberry Pi by cross-compiling.
 4. Copy the code to the Raspberry Pi, execute it, and check if it runs correctly.
-### [Crosscompile in Qt](https://www.interelectronix.com/kr/keuloseu-keompaileul-wihae-ubuntu-20-ltseseo-qt-creator-guseong.html)
 ### [Dashboard Example in Qt](https://doc.qt.io/qt-5/qtquickextras-dashboard-example.html)
 
 
