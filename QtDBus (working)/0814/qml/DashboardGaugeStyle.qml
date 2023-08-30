@@ -54,7 +54,7 @@ import QtQuick.Controls.Styles 1.4
 CircularGaugeStyle {
     tickmarkInset: toPixels(0.04)
     minorTickmarkInset: tickmarkInset
-    labelStepSize: 20
+    labelStepSize: 10
     labelInset: toPixels(0.23)
 
     property real xCenter: outerRadius
@@ -90,7 +90,7 @@ CircularGaugeStyle {
 
         ctx.beginPath();
         ctx.lineWidth = tickmarkInset;
-        ctx.strokeStyle = "black";
+        ctx.strokeStyle = "green";
         ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
         ctx.stroke();
 
@@ -158,7 +158,7 @@ CircularGaugeStyle {
             ctx.lineTo(xCenter, yCenter - needleLength);
             ctx.lineTo(xCenter, 0);
             ctx.closePath();
-            ctx.fillStyle = Qt.rgba(0.66, 0, 0, 0.66);
+            ctx.fillStyle = Qt.rgba(0, 255, 0, 0.66);
             ctx.fill();
 
             ctx.beginPath();
@@ -167,11 +167,11 @@ CircularGaugeStyle {
             ctx.lineTo(xCenter + needleTipWidth / 2, 0);
             ctx.lineTo(xCenter, 0);
             ctx.closePath();
-            ctx.fillStyle = Qt.lighter(Qt.rgba(0.66, 0, 0, 0.66));
+            ctx.fillStyle = Qt.lighter(Qt.rgba(0, 255, 0, 0.66));
             ctx.fill();
 
         }
-        /*antialiasing: true
+        antialiasing: true
         smooth: true
         transform: Rotation {
             id: rotation
@@ -182,8 +182,8 @@ CircularGaugeStyle {
 
             Behavior on angle {
 
-                NumberAnimation{
-                    duration: 1000
+                RotationAnimation{
+                    duration: 200
                     easing.type: Easing.OutQuad
                 }
             }
@@ -191,19 +191,19 @@ CircularGaugeStyle {
 
 
 
-        // Sample Timer to update needle angle
+
         Timer{
             id: tim
-            repeat: true
+            repeat: false
             running: true
-            interval: 1000
+            interval: 100
             onTriggered: {
 
 
                 rotation.angle = car.speed
 
              }
-          }*/
+          }
 
     }
     foreground: null

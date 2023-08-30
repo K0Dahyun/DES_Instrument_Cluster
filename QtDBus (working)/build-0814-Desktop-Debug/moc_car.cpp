@@ -87,17 +87,17 @@ static const uint qt_meta_data_Car[] = {
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    6,
-    QMetaType::Void, QMetaType::Int,    8,
-    QMetaType::Void, QMetaType::Int,   10,
-    QMetaType::Int,
-    QMetaType::Int,
-    QMetaType::Int,
+    QMetaType::Void, QMetaType::QReal,    6,
+    QMetaType::Void, QMetaType::QReal,    8,
+    QMetaType::Void, QMetaType::QReal,   10,
+    QMetaType::QReal,
+    QMetaType::QReal,
+    QMetaType::QReal,
 
  // properties: name, type, flags
-       6, QMetaType::Int, 0x00495001,
-       8, QMetaType::Int, 0x00495001,
-      10, QMetaType::Int, 0x00495001,
+       6, QMetaType::QReal, 0x00495001,
+       8, QMetaType::QReal, 0x00495001,
+      10, QMetaType::QReal, 0x00495001,
 
  // properties: notify_signal_id
        0,
@@ -116,15 +116,15 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         case 0: _t->speedChanged(); break;
         case 1: _t->rpmChanged(); break;
         case 2: _t->batteryChanged(); break;
-        case 3: _t->setSpeed((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->setRPM((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->setBattery((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: { int _r = _t->getSpeed();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
-        case 7: { int _r = _t->getRPM();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
-        case 8: { int _r = _t->getBattery();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        case 3: _t->setSpeed((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 4: _t->setRPM((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 5: _t->setBattery((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 6: { qreal _r = _t->getSpeed();
+            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
+        case 7: { qreal _r = _t->getRPM();
+            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
+        case 8: { qreal _r = _t->getBattery();
+            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -157,9 +157,9 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         Q_UNUSED(_t)
         void *_v = _a[0];
         switch (_id) {
-        case 0: *reinterpret_cast< int*>(_v) = _t->getSpeed(); break;
-        case 1: *reinterpret_cast< int*>(_v) = _t->getRPM(); break;
-        case 2: *reinterpret_cast< int*>(_v) = _t->getBattery(); break;
+        case 0: *reinterpret_cast< qreal*>(_v) = _t->getSpeed(); break;
+        case 1: *reinterpret_cast< qreal*>(_v) = _t->getRPM(); break;
+        case 2: *reinterpret_cast< qreal*>(_v) = _t->getBattery(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {

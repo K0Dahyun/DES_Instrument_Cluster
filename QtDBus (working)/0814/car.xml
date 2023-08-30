@@ -2,13 +2,13 @@
 <node>
   <interface name="local.Car">
     <method name="setSpeed">
-      <arg name="speed" type="i" direction="in"/>
+      <arg name="speed" type="d" direction="in"/>
     </method>
     <method name="setRPM">
-      <arg name="rpm" type="i" direction="in"/>
+      <arg name="rpm" type="d" direction="in"/>
     </method>
     <method name="setBattery">
-      <arg name="battery" type="i" direction="in"/>
+      <arg name="battery" type="d" direction="in"/>
     </method>
   </interface>
 </node>

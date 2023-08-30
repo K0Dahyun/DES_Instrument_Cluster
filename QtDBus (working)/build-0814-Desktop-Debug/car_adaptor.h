@@ -33,13 +33,13 @@ class CarAdaptor: public QDBusAbstractAdaptor
     Q_CLASSINFO("D-Bus Introspection", ""
 "  <interface name=\"local.Car\">\n"
 "    <method name=\"setSpeed\">\n"
-"      <arg direction=\"in\" type=\"i\" name=\"speed\"/>\n"
+"      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n"
 "    </method>\n"
 "    <method name=\"setRPM\">\n"
-"      <arg direction=\"in\" type=\"i\" name=\"rpm\"/>\n"
+"      <arg direction=\"in\" type=\"d\" name=\"rpm\"/>\n"
 "    </method>\n"
 "    <method name=\"setBattery\">\n"
-"      <arg direction=\"in\" type=\"i\" name=\"battery\"/>\n"
+"      <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n"
 "    </method>\n"
 "  </interface>\n"
         "")
@@ -49,9 +49,9 @@ public:
 
 public: // PROPERTIES
 public Q_SLOTS: // METHODS
-    void setBattery(int battery);
-    void setRPM(int rpm);
-    void setSpeed(int speed);
+    void setBattery(double battery);
+    void setRPM(double rpm);
+    void setSpeed(double speed);
 Q_SIGNALS: // SIGNALS
 };
 

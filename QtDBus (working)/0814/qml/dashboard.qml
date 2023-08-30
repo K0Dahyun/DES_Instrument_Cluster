@@ -141,7 +141,7 @@ Window {
                 id: speedometer
                 value: valueSource.kph
                 anchors.verticalCenter: parent.verticalCenter
-                maximumValue: 280
+                maximumValue: 100
                 width: height
                 height: container.height * 0.5
 

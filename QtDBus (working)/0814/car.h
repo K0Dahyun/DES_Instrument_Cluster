@@ -6,21 +6,21 @@
 class Car : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int speed READ getSpeed NOTIFY speedChanged)
-    Q_PROPERTY(int rpm READ getRPM NOTIFY rpmChanged)
-    Q_PROPERTY(int battery READ getBattery NOTIFY batteryChanged)
+    Q_PROPERTY(qreal speed READ getSpeed NOTIFY speedChanged)
+    Q_PROPERTY(qreal rpm READ getRPM NOTIFY rpmChanged)
+    Q_PROPERTY(qreal battery READ getBattery NOTIFY batteryChanged)
 
 public:
     explicit Car(QObject *parent = nullptr);
 
 public Q_SLOTS:
-    void setSpeed(int speed);
-    void setRPM(int rpm);
-    void setBattery(int battery);
+    void setSpeed(qreal speed);
+    void setRPM(qreal rpm);
+    void setBattery(qreal battery);
 
-    int getSpeed();
-    int getRPM();
-    int getBattery();
+    qreal getSpeed();
+    qreal getRPM();
+    qreal getBattery();
 
 signals :
     void speedChanged();
@@ -28,9 +28,9 @@ signals :
     void batteryChanged();
 
 private:
-    int speed;
-    int rpm;
-    int battery;
+    qreal speed;
+    qreal rpm;
+    qreal battery;
 };
 
 #endif // CAR_H

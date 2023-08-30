@@ -10,37 +10,37 @@ Car::Car(QObject *parent) : QObject(parent)
     battery = 0;
 }
 
-void Car::setSpeed(int speed)
+void Car::setSpeed(qreal speed)
 {
     this->speed = speed;
     emit speedChanged();
 }
 
-void Car::setRPM(int rpm)
+void Car::setRPM(qreal rpm)
 {
     this->rpm = rpm;
     emit rpmChanged();
 }
 
-void Car::setBattery(int battery)
+void Car::setBattery(qreal battery)
 {
     this->battery = battery;
     emit batteryChanged();
 }
 
-int Car::getSpeed()
+qreal Car::getSpeed()
 {
     qDebug() << "speed data : " << speed;
     return speed;
 }
 
-int Car::getRPM()
+qreal Car::getRPM()
 {
     qDebug() << "rpm data : " << rpm;
     return rpm;
 }
 
-int Car::getBattery()
+qreal Car::getBattery()
 {
     qDebug() << "battery data : " << battery;
     return battery;

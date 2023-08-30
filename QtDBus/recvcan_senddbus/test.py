@@ -5,7 +5,7 @@ import time
 
 class DataReceiver:
     def __init__(self):
-        self.counter = 0
+        self.counter =0
         self.counter1 = 0
     	
     def receive_temp_data(self):
@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     receiver = DataReceiver()
     
-    while receiver.counter < 280:
+    while receiver.counter <280:
         data = receiver.receive_temp_data()
         data1= receiver.receive_temp_data1()
         car_interface.setSpeed(data)

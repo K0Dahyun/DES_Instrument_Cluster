@@ -33,21 +33,21 @@ CarAdaptor::~CarAdaptor()
     // destructor
 }
 
-void CarAdaptor::setBattery(int battery)
+void CarAdaptor::setBattery(double battery)
 {
     // handle method call local.Car.setBattery
-    QMetaObject::invokeMethod(parent(), "setBattery", Q_ARG(int, battery));
+    QMetaObject::invokeMethod(parent(), "setBattery", Q_ARG(double, battery));
 }
 
-void CarAdaptor::setRPM(int rpm)
+void CarAdaptor::setRPM(double rpm)
 {
     // handle method call local.Car.setRPM
-    QMetaObject::invokeMethod(parent(), "setRPM", Q_ARG(int, rpm));
+    QMetaObject::invokeMethod(parent(), "setRPM", Q_ARG(double, rpm));
 }
 
-void CarAdaptor::setSpeed(int speed)
+void CarAdaptor::setSpeed(double speed)
 {
     // handle method call local.Car.setSpeed
-    QMetaObject::invokeMethod(parent(), "setSpeed", Q_ARG(int, speed));
+    QMetaObject::invokeMethod(parent(), "setSpeed", Q_ARG(double, speed));
 }
 

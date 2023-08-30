@@ -49,10 +49,10 @@ QT_MOC_LITERAL(11, 423, 5) // "speed"
     "CarAdaptor\0D-Bus Interface\0local.Car\0"
     "D-Bus Introspection\0"
     "  <interface name=\"local.Car\">\n    <method name=\"setSpeed\">\n    "
-    "  <arg direction=\"in\" type=\"i\" name=\"speed\"/>\n    </method>\n  "
-    "  <method name=\"setRPM\">\n      <arg direction=\"in\" type=\"i\" nam"
+    "  <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n    </method>\n  "
+    "  <method name=\"setRPM\">\n      <arg direction=\"in\" type=\"d\" nam"
     "e=\"rpm\"/>\n    </method>\n    <method name=\"setBattery\">\n      <a"
-    "rg direction=\"in\" type=\"i\" name=\"battery\"/>\n    </method>\n  </"
+    "rg direction=\"in\" type=\"d\" name=\"battery\"/>\n    </method>\n  </"
     "interface>\n\0"
     "setBattery\0\0battery\0setRPM\0rpm\0setSpeed\0"
     "speed"
@@ -82,9 +82,9 @@ static const uint qt_meta_data_CarAdaptor[] = {
       10,    1,   39,    6, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    7,
-    QMetaType::Void, QMetaType::Int,    9,
-    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Double,    7,
+    QMetaType::Void, QMetaType::Double,    9,
+    QMetaType::Void, QMetaType::Double,   11,
 
        0        // eod
 };
@@ -95,9 +95,9 @@ void CarAdaptor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<CarAdaptor *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->setBattery((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->setRPM((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 2: _t->setSpeed((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->setBattery((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 1: _t->setRPM((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 2: _t->setSpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
         default: ;
         }
     }

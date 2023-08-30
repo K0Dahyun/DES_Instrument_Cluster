@@ -54,33 +54,9 @@ import QtQuick 2.2
 //! [0]
 Item {
     id: valueSource
-    property real kph: car.speed
-    property real rpm: car.rpm
+    property real kph:  car.speed
+    property real rpm:  car.rpm
     property real fuel: car.battery
-
-    /*property string gear: {
-        var g;
-        if (kph == 0) {
-            return "P";
-        }
-        if (kph < 30) {
-            return "1";
-        }
-        if (kph < 50) {
-            return "2";
-        }
-        if (kph < 80) {
-            return "3";
-        }
-        if (kph < 120) {
-            return "4";
-        }
-        if (kph < 160) {
-            return "5";
-        }
-    }
-    property bool start: true
-*/
 
     SequentialAnimation {
         running: true
@@ -96,29 +72,31 @@ Item {
             property: "start"
             value: false
         }
-
+/*
         ParallelAnimation {
             NumberAnimation {
                 target: valueSource
                 property: "kph"
                 easing.type: Easing.InOutSine
-                duration: 3000
+                duration: 1000
             }
             NumberAnimation {
                 target: valueSource
                 property: "rpm"
                 easing.type: Easing.InOutSine
-                duration: 3000
+                duration: 1000
             }
 
             NumberAnimation {
             target: valueSource
             property: "fuel"
             easing.type: Easing.InOutSine
-            duration: 3000
+            duration: 1000
             }
-        }
+        }*/
 
 
     }
+
 }
+
