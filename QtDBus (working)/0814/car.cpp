@@ -13,7 +13,7 @@ Car::Car(QObject *parent) : QObject(parent)
 void Car::setSpeed(qreal speed)
 {
     this->speed = speed;
-    emit speedChanged();
+    //emit speedChanged();
 }
 
 void Car::setRPM(qreal rpm)

@@ -95,7 +95,7 @@ static const uint qt_meta_data_Car[] = {
     QMetaType::QReal,
 
  // properties: name, type, flags
-       6, QMetaType::QReal, 0x00495001,
+       6, QMetaType::QReal, 0x00095401,
        8, QMetaType::QReal, 0x00495001,
       10, QMetaType::QReal, 0x00495001,
 

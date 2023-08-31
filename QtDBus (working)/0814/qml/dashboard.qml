@@ -61,7 +61,7 @@ Window {
     height: 400
     //visibility: Window.FullScreen
     color: "#161616"
-    title: "Qt Quick Extras Demo"
+    title: "INSTRUMENT CLUSTER"
 
     ValueSource {
         id: valueSource

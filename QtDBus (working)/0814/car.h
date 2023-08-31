@@ -6,7 +6,7 @@
 class Car : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(qreal speed READ getSpeed NOTIFY speedChanged)
+    Q_PROPERTY(qreal speed READ getSpeed NOTIFY rpmChanged)
     Q_PROPERTY(qreal rpm READ getRPM NOTIFY rpmChanged)
     Q_PROPERTY(qreal battery READ getBattery NOTIFY batteryChanged)
 

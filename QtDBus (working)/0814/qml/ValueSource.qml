@@ -72,8 +72,8 @@ Item {
             property: "start"
             value: false
         }
-/*
-        ParallelAnimation {
+
+        /*ParallelAnimation {
             NumberAnimation {
                 target: valueSource
                 property: "kph"
