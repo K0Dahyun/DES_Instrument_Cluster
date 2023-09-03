@@ -32,6 +32,14 @@ class CarAdaptor: public QDBusAbstractAdaptor
     Q_CLASSINFO("D-Bus Interface", "local.Car")
     Q_CLASSINFO("D-Bus Introspection", ""
 "  <interface name=\"local.Car\">\n"
+"    <property access=\"read\" type=\"d\" name=\"speed\"/>\n"
+"    <property access=\"read\" type=\"d\" name=\"rpm\"/>\n"
+"    <property access=\"read\" type=\"d\" name=\"battery\"/>\n"
+"    <signal name=\"speedChanged\"/>\n"
+"    <signal name=\"rpmChanged\"/>\n"
+"    <signal name=\"batteryChanged\"/>\n"
+"    <signal name=\"canFail\"/>\n"
+"    <signal name=\"canRestored\"/>\n"
 "    <method name=\"setSpeed\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n"
 "    </method>\n"
@@ -41,7 +49,17 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"setBattery\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n"
 "    </method>\n"
-"    <method name=\"setCanTimeout\"/>\n"
+"    <method name=\"canDisconnected\"/>\n"
+"    <method name=\"checkCanRestored\"/>\n"
+"    <method name=\"getSpeed\">\n"
+"      <arg direction=\"out\" type=\"d\"/>\n"
+"    </method>\n"
+"    <method name=\"getRPM\">\n"
+"      <arg direction=\"out\" type=\"d\"/>\n"
+"    </method>\n"
+"    <method name=\"getBattery\">\n"
+"      <arg direction=\"out\" type=\"d\"/>\n"
+"    </method>\n"
 "  </interface>\n"
         "")
 public:
@@ -49,12 +67,30 @@ public:
     virtual ~CarAdaptor();
 
 public: // PROPERTIES
+    Q_PROPERTY(double battery READ battery)
+    double battery() const;
+
+    Q_PROPERTY(double rpm READ rpm)
+    double rpm() const;
+
+    Q_PROPERTY(double speed READ speed)
+    double speed() const;
+
 public Q_SLOTS: // METHODS
+    void canDisconnected();
+    void checkCanRestored();
+    double getBattery();
+    double getRPM();
+    double getSpeed();
     void setBattery(double battery);
-    void setCanTimeout();
     void setRPM(double rpm);
     void setSpeed(double speed);
 Q_SIGNALS: // SIGNALS
+    void batteryChanged();
+    void canFail();
+    void canRestored();
+    void rpmChanged();
+    void speedChanged();
 };
 
 #endif

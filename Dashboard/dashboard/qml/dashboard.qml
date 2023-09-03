@@ -128,7 +128,6 @@ Window {
                 Behavior on value {
                     NumberAnimation {
                     duration: 200
-                    //easing.type: Easing.OutQuad
                     }
                 }
 
@@ -147,7 +146,6 @@ Window {
                 Behavior on value {
                     NumberAnimation {
                     duration: 200
-                    //easing.type: Easing.OutQuad
                     }
                 }
             }
@@ -156,8 +154,11 @@ Window {
 
         Connections {
             target: car // This assumes you've set a "car" context property from C++.
-            onCanTimeout: {
+            onCanFail: {
                 timeoutText.visible = true // Show the message when the signal is received.
+            }
+            onCanRestored: {
+                timeoutText.visible = false
             }
         }
 

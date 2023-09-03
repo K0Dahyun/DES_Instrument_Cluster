@@ -17,7 +17,9 @@ public Q_SLOTS:
     void setSpeed(qreal speed);
     void setRPM(qreal rpm);
     void setBattery(qreal battery);
-    void setCanTimeout();
+
+    void canDisconnected();
+    void checkCanRestored();
 
     qreal getSpeed();
     qreal getRPM();
@@ -27,12 +29,14 @@ signals :
     void speedChanged();
     void rpmChanged();
     void batteryChanged();
-    void canTimeout();
+    void canFail();
+    void canRestored();
 
 private:
     qreal speed;
     qreal rpm;
     qreal battery;
+    bool canStatus; //canstatus true is disconnection
 };
 
 #endif // CAR_H

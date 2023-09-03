@@ -33,16 +33,64 @@ CarAdaptor::~CarAdaptor()
     // destructor
 }
 
+double CarAdaptor::battery() const
+{
+    // get the value of property battery
+    return qvariant_cast< double >(parent()->property("battery"));
+}
+
+double CarAdaptor::rpm() const
+{
+    // get the value of property rpm
+    return qvariant_cast< double >(parent()->property("rpm"));
+}
+
+double CarAdaptor::speed() const
+{
+    // get the value of property speed
+    return qvariant_cast< double >(parent()->property("speed"));
+}
+
+void CarAdaptor::canDisconnected()
+{
+    // handle method call local.Car.canDisconnected
+    QMetaObject::invokeMethod(parent(), "canDisconnected");
+}
+
+void CarAdaptor::checkCanRestored()
+{
+    // handle method call local.Car.checkCanRestored
+    QMetaObject::invokeMethod(parent(), "checkCanRestored");
+}
+
+double CarAdaptor::getBattery()
+{
+    // handle method call local.Car.getBattery
+    double out0;
+    QMetaObject::invokeMethod(parent(), "getBattery", Q_RETURN_ARG(double, out0));
+    return out0;
+}
+
+double CarAdaptor::getRPM()
+{
+    // handle method call local.Car.getRPM
+    double out0;
+    QMetaObject::invokeMethod(parent(), "getRPM", Q_RETURN_ARG(double, out0));
+    return out0;
+}
+
+double CarAdaptor::getSpeed()
+{
+    // handle method call local.Car.getSpeed
+    double out0;
+    QMetaObject::invokeMethod(parent(), "getSpeed", Q_RETURN_ARG(double, out0));
+    return out0;
+}
+
 void CarAdaptor::setBattery(double battery)
 {
     // handle method call local.Car.setBattery
     QMetaObject::invokeMethod(parent(), "setBattery", Q_ARG(double, battery));
-}
-
-void CarAdaptor::setCanTimeout()
-{
-    // handle method call local.Car.setCanTimeout
-    QMetaObject::invokeMethod(parent(), "setCanTimeout");
 }
 
 void CarAdaptor::setRPM(double rpm)
