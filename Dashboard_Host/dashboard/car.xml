@@ -10,9 +10,9 @@
     </signal>
     <signal name="batteryChanged">
     </signal>
-    <signal name="canFail">
+    <signal name="candisconnected">
     </signal>
-    <signal name="canRestored">
+    <signal name="canconnected">
     </signal>
     <method name="setSpeed">
       <arg name="speed" type="d" direction="in"/>
@@ -23,9 +23,9 @@
     <method name="setBattery">
       <arg name="battery" type="d" direction="in"/>
     </method>
-    <method name="canDisconnected">
+    <method name="candisConnected">
     </method>
-    <method name="checkCanRestored">
+    <method name="canConnected">
     </method>
     <method name="getSpeed">
       <arg type="d" direction="out"/>

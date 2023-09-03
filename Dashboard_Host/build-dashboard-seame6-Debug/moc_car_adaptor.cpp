@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CarAdaptor_t {
     QByteArrayData data[22];
-    char stringdata0[1292];
+    char stringdata0[1302];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,24 +36,24 @@ QT_MOC_LITERAL(0, 0, 10), // "CarAdaptor"
 QT_MOC_LITERAL(1, 11, 15), // "D-Bus Interface"
 QT_MOC_LITERAL(2, 27, 9), // "local.Car"
 QT_MOC_LITERAL(3, 37, 19), // "D-Bus Introspection"
-QT_MOC_LITERAL(4, 57, 1069), // "  <interface name=\"local.Car..."
-QT_MOC_LITERAL(5, 1021, 14), // "batteryChanged"
-QT_MOC_LITERAL(6, 1036, 0), // ""
-QT_MOC_LITERAL(7, 1037, 7), // "canFail"
-QT_MOC_LITERAL(8, 1045, 11), // "canRestored"
-QT_MOC_LITERAL(9, 1057, 10), // "rpmChanged"
-QT_MOC_LITERAL(10, 1068, 12), // "speedChanged"
-QT_MOC_LITERAL(11, 1081, 15), // "canDisconnected"
-QT_MOC_LITERAL(12, 1097, 16), // "checkCanRestored"
-QT_MOC_LITERAL(13, 1114, 10), // "getBattery"
-QT_MOC_LITERAL(14, 1125, 6), // "getRPM"
-QT_MOC_LITERAL(15, 1132, 8), // "getSpeed"
-QT_MOC_LITERAL(16, 1141, 10), // "setBattery"
-QT_MOC_LITERAL(17, 1152, 7), // "battery"
-QT_MOC_LITERAL(18, 1160, 6), // "setRPM"
-QT_MOC_LITERAL(19, 1167, 3), // "rpm"
-QT_MOC_LITERAL(20, 1171, 8), // "setSpeed"
-QT_MOC_LITERAL(21, 1180, 5) // "speed"
+QT_MOC_LITERAL(4, 57, 1074), // "  <interface name=\"local.Car..."
+QT_MOC_LITERAL(5, 1026, 14), // "batteryChanged"
+QT_MOC_LITERAL(6, 1041, 0), // ""
+QT_MOC_LITERAL(7, 1042, 12), // "canconnected"
+QT_MOC_LITERAL(8, 1055, 15), // "candisconnected"
+QT_MOC_LITERAL(9, 1071, 10), // "rpmChanged"
+QT_MOC_LITERAL(10, 1082, 12), // "speedChanged"
+QT_MOC_LITERAL(11, 1095, 12), // "canConnected"
+QT_MOC_LITERAL(12, 1108, 15), // "candisConnected"
+QT_MOC_LITERAL(13, 1124, 10), // "getBattery"
+QT_MOC_LITERAL(14, 1135, 6), // "getRPM"
+QT_MOC_LITERAL(15, 1142, 8), // "getSpeed"
+QT_MOC_LITERAL(16, 1151, 10), // "setBattery"
+QT_MOC_LITERAL(17, 1162, 7), // "battery"
+QT_MOC_LITERAL(18, 1170, 6), // "setRPM"
+QT_MOC_LITERAL(19, 1177, 3), // "rpm"
+QT_MOC_LITERAL(20, 1181, 8), // "setSpeed"
+QT_MOC_LITERAL(21, 1190, 5) // "speed"
 
     },
     "CarAdaptor\0D-Bus Interface\0local.Car\0"
@@ -62,23 +62,23 @@ QT_MOC_LITERAL(21, 1180, 5) // "speed"
     "d\" name=\"speed\"/>\n    <property access=\"read\" type=\"d\" name=\""
     "rpm\"/>\n    <property access=\"read\" type=\"d\" name=\"battery\"/>\n"
     "    <signal name=\"speedChanged\"/>\n    <signal name=\"rpmChanged\"/>"
-    "\n    <signal name=\"batteryChanged\"/>\n    <signal name=\"canFail\"/"
-    ">\n    <signal name=\"canRestored\"/>\n    <method name=\"setSpeed\">\n"
-    "      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n    </method>"
-    "\n    <method name=\"setRPM\">\n      <arg direction=\"in\" type=\"d\""
-    " name=\"rpm\"/>\n    </method>\n    <method name=\"setBattery\">\n    "
-    "  <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n    </method>\n"
-    "    <method name=\"canDisconnected\"/>\n    <method name=\"checkCanRes"
-    "tored\"/>\n    <method name=\"getSpeed\">\n      <arg direction=\"out\""
-    " type=\"d\"/>\n    </method>\n    <method name=\"getRPM\">\n      <arg"
-    " direction=\"out\" type=\"d\"/>\n    </method>\n    <method name=\"get"
-    "Battery\">\n      <arg direction=\"out\" type=\"d\"/>\n    </method>\n"
-    "  </interface>\n\0"
-    "batteryChanged\0\0canFail\0canRestored\0"
-    "rpmChanged\0speedChanged\0canDisconnected\0"
-    "checkCanRestored\0getBattery\0getRPM\0"
-    "getSpeed\0setBattery\0battery\0setRPM\0"
-    "rpm\0setSpeed\0speed"
+    "\n    <signal name=\"batteryChanged\"/>\n    <signal name=\"candisconn"
+    "ected\"/>\n    <signal name=\"canconnected\"/>\n    <method name=\"set"
+    "Speed\">\n      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n   "
+    " </method>\n    <method name=\"setRPM\">\n      <arg direction=\"in\" "
+    "type=\"d\" name=\"rpm\"/>\n    </method>\n    <method name=\"setBatter"
+    "y\">\n      <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n    <"
+    "/method>\n    <method name=\"candisConnected\"/>\n    <method name=\"c"
+    "anConnected\"/>\n    <method name=\"getSpeed\">\n      <arg direction="
+    "\"out\" type=\"d\"/>\n    </method>\n    <method name=\"getRPM\">\n   "
+    "   <arg direction=\"out\" type=\"d\"/>\n    </method>\n    <method nam"
+    "e=\"getBattery\">\n      <arg direction=\"out\" type=\"d\"/>\n    </me"
+    "thod>\n  </interface>\n\0"
+    "batteryChanged\0\0canconnected\0"
+    "candisconnected\0rpmChanged\0speedChanged\0"
+    "canConnected\0candisConnected\0getBattery\0"
+    "getRPM\0getSpeed\0setBattery\0battery\0"
+    "setRPM\0rpm\0setSpeed\0speed"
 };
 #undef QT_MOC_LITERAL
 
@@ -148,12 +148,12 @@ void CarAdaptor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->batteryChanged(); break;
-        case 1: _t->canFail(); break;
-        case 2: _t->canRestored(); break;
+        case 1: _t->canconnected(); break;
+        case 2: _t->candisconnected(); break;
         case 3: _t->rpmChanged(); break;
         case 4: _t->speedChanged(); break;
-        case 5: _t->canDisconnected(); break;
-        case 6: _t->checkCanRestored(); break;
+        case 5: _t->canConnected(); break;
+        case 6: _t->candisConnected(); break;
         case 7: { double _r = _t->getBattery();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = std::move(_r); }  break;
         case 8: { double _r = _t->getRPM();
@@ -176,14 +176,14 @@ void CarAdaptor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         }
         {
             using _t = void (CarAdaptor::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&CarAdaptor::canFail)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&CarAdaptor::canconnected)) {
                 *result = 1;
                 return;
             }
         }
         {
             using _t = void (CarAdaptor::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&CarAdaptor::canRestored)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&CarAdaptor::candisconnected)) {
                 *result = 2;
                 return;
             }
@@ -284,13 +284,13 @@ void CarAdaptor::batteryChanged()
 }
 
 // SIGNAL 1
-void CarAdaptor::canFail()
+void CarAdaptor::canconnected()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void CarAdaptor::canRestored()
+void CarAdaptor::candisconnected()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }

@@ -51,16 +51,16 @@ double CarAdaptor::speed() const
     return qvariant_cast< double >(parent()->property("speed"));
 }
 
-void CarAdaptor::canDisconnected()
+void CarAdaptor::canConnected()
 {
-    // handle method call local.Car.canDisconnected
-    QMetaObject::invokeMethod(parent(), "canDisconnected");
+    // handle method call local.Car.canConnected
+    QMetaObject::invokeMethod(parent(), "canConnected");
 }
 
-void CarAdaptor::checkCanRestored()
+void CarAdaptor::candisConnected()
 {
-    // handle method call local.Car.checkCanRestored
-    QMetaObject::invokeMethod(parent(), "checkCanRestored");
+    // handle method call local.Car.candisConnected
+    QMetaObject::invokeMethod(parent(), "candisConnected");
 }
 
 double CarAdaptor::getBattery()

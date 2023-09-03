@@ -9,36 +9,29 @@ Car::Car(QObject *parent) : QObject(parent), speed(0), rpm(0), battery(0), canSt
 
 void Car::setSpeed(qreal speed)
 {
-    checkCanRestored();
     this->speed = speed;
     emit speedChanged();
 }
 
 void Car::setRPM(qreal rpm)
 {
-    checkCanRestored();
     this->rpm = rpm;
     emit rpmChanged();
 }
 
 void Car::setBattery(qreal battery)
 {
-    checkCanRestored();
     this->battery = battery;
     emit batteryChanged();
 }
 
-void Car::canDisconnected() {
+void Car::candisConnected() {
     qDebug() << "can disconnect ";
-    this->canStatus = true;
-    emit canFail();
+    emit candisconnected();
 }
 
-void Car::checkCanRestored() {
-    if(canStatus){
-        canStatus = false;
-        emit canRestored();
-    }
+void Car::canConnected() {
+    emit canconnected();
 }
 
 qreal Car::getSpeed()
@@ -58,6 +51,5 @@ qreal Car::getBattery()
     qDebug() << "battery data : " << battery;
     return battery;
 }
-
 
 

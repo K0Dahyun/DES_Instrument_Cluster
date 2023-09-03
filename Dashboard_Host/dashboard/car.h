@@ -18,8 +18,8 @@ public Q_SLOTS:
     void setRPM(qreal rpm);
     void setBattery(qreal battery);
 
-    void canDisconnected();
-    void checkCanRestored();
+    void candisConnected();
+    void canConnected();
 
     qreal getSpeed();
     qreal getRPM();
@@ -29,8 +29,8 @@ signals :
     void speedChanged();
     void rpmChanged();
     void batteryChanged();
-    void canFail();
-    void canRestored();
+    void candisconnected();
+    void canconnected();
 
 private:
     qreal speed;

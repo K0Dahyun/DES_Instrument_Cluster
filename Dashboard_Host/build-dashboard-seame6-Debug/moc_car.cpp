@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Car_t {
     QByteArrayData data[18];
-    char stringdata0[169];
+    char stringdata0[174];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,26 +37,26 @@ QT_MOC_LITERAL(1, 4, 12), // "speedChanged"
 QT_MOC_LITERAL(2, 17, 0), // ""
 QT_MOC_LITERAL(3, 18, 10), // "rpmChanged"
 QT_MOC_LITERAL(4, 29, 14), // "batteryChanged"
-QT_MOC_LITERAL(5, 44, 7), // "canFail"
-QT_MOC_LITERAL(6, 52, 11), // "canRestored"
-QT_MOC_LITERAL(7, 64, 8), // "setSpeed"
-QT_MOC_LITERAL(8, 73, 5), // "speed"
-QT_MOC_LITERAL(9, 79, 6), // "setRPM"
-QT_MOC_LITERAL(10, 86, 3), // "rpm"
-QT_MOC_LITERAL(11, 90, 10), // "setBattery"
-QT_MOC_LITERAL(12, 101, 7), // "battery"
-QT_MOC_LITERAL(13, 109, 15), // "canDisconnected"
-QT_MOC_LITERAL(14, 125, 16), // "checkCanRestored"
-QT_MOC_LITERAL(15, 142, 8), // "getSpeed"
-QT_MOC_LITERAL(16, 151, 6), // "getRPM"
-QT_MOC_LITERAL(17, 158, 10) // "getBattery"
+QT_MOC_LITERAL(5, 44, 15), // "candisconnected"
+QT_MOC_LITERAL(6, 60, 12), // "canconnected"
+QT_MOC_LITERAL(7, 73, 8), // "setSpeed"
+QT_MOC_LITERAL(8, 82, 5), // "speed"
+QT_MOC_LITERAL(9, 88, 6), // "setRPM"
+QT_MOC_LITERAL(10, 95, 3), // "rpm"
+QT_MOC_LITERAL(11, 99, 10), // "setBattery"
+QT_MOC_LITERAL(12, 110, 7), // "battery"
+QT_MOC_LITERAL(13, 118, 15), // "candisConnected"
+QT_MOC_LITERAL(14, 134, 12), // "canConnected"
+QT_MOC_LITERAL(15, 147, 8), // "getSpeed"
+QT_MOC_LITERAL(16, 156, 6), // "getRPM"
+QT_MOC_LITERAL(17, 163, 10) // "getBattery"
 
     },
     "Car\0speedChanged\0\0rpmChanged\0"
-    "batteryChanged\0canFail\0canRestored\0"
-    "setSpeed\0speed\0setRPM\0rpm\0setBattery\0"
-    "battery\0canDisconnected\0checkCanRestored\0"
-    "getSpeed\0getRPM\0getBattery"
+    "batteryChanged\0candisconnected\0"
+    "canconnected\0setSpeed\0speed\0setRPM\0"
+    "rpm\0setBattery\0battery\0candisConnected\0"
+    "canConnected\0getSpeed\0getRPM\0getBattery"
 };
 #undef QT_MOC_LITERAL
 
@@ -129,13 +129,13 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         case 0: _t->speedChanged(); break;
         case 1: _t->rpmChanged(); break;
         case 2: _t->batteryChanged(); break;
-        case 3: _t->canFail(); break;
-        case 4: _t->canRestored(); break;
+        case 3: _t->candisconnected(); break;
+        case 4: _t->canconnected(); break;
         case 5: _t->setSpeed((*reinterpret_cast< qreal(*)>(_a[1]))); break;
         case 6: _t->setRPM((*reinterpret_cast< qreal(*)>(_a[1]))); break;
         case 7: _t->setBattery((*reinterpret_cast< qreal(*)>(_a[1]))); break;
-        case 8: _t->canDisconnected(); break;
-        case 9: _t->checkCanRestored(); break;
+        case 8: _t->candisConnected(); break;
+        case 9: _t->canConnected(); break;
         case 10: { qreal _r = _t->getSpeed();
             if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
         case 11: { qreal _r = _t->getRPM();
@@ -169,14 +169,14 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         }
         {
             using _t = void (Car::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::canFail)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::candisconnected)) {
                 *result = 3;
                 return;
             }
         }
         {
             using _t = void (Car::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::canRestored)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::canconnected)) {
                 *result = 4;
                 return;
             }
@@ -275,13 +275,13 @@ void Car::batteryChanged()
 }
 
 // SIGNAL 3
-void Car::canFail()
+void Car::candisconnected()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 
 // SIGNAL 4
-void Car::canRestored()
+void Car::canconnected()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }

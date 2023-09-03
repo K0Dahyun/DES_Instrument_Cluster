@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = dashboard1.0.0
-DISTDIR = /home/seame-workstation08/Project-2/Dashboard/build-dashboard-Desktop-Debug/.tmp/dashboard1.0.0
+DISTDIR = /home/seame-workstation08/Project-2/Dashboard_Host/build-dashboard-Desktop-Debug/.tmp/dashboard1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/seame-workstation08/Qt/5.15.2/gcc_64/lib
 LIBS          = $(SUBLIBS) /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5Quick.so /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5Gui.so /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5QmlModels.so /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5Qml.so /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5Network.so /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5DBus.so /home/seame-workstation08/Qt/5.15.2/gcc_64/lib/libQt5Core.so -lGL -lpthread   
@@ -223,6 +223,7 @@ DIST          = ../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		../dashboard/.qmake.stash \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -417,6 +418,7 @@ Makefile: ../dashboard/dashboard.pro ../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -598,6 +600,7 @@ Makefile: ../dashboard/dashboard.pro ../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -772,7 +775,7 @@ moc_busmanager.cpp: ../dashboard/busmanager.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qdbuspendingcall.h \
 		moc_predefs.h \
 		../../../Qt/5.15.2/gcc_64/bin/moc
-	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../dashboard/busmanager.h -o moc_busmanager.cpp
+	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard_Host/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard_Host/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../dashboard/busmanager.h -o moc_busmanager.cpp
 
 moc_car.cpp: ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/QObject \
@@ -830,7 +833,7 @@ moc_car.cpp: ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
 		moc_predefs.h \
 		../../../Qt/5.15.2/gcc_64/bin/moc
-	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../dashboard/car.h -o moc_car.cpp
+	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard_Host/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard_Host/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../dashboard/car.h -o moc_car.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1078,7 +1081,7 @@ moc_car_adaptor.cpp: car_adaptor.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qdbusvirtualobject.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qtdbusversion.h \
 		../../../Qt/5.15.2/gcc_64/bin/moc
-	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include car_adaptor.h -o moc_car_adaptor.cpp
+	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard_Host/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard_Host/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include car_adaptor.h -o moc_car_adaptor.cpp
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:

@@ -38,8 +38,8 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <signal name=\"speedChanged\"/>\n"
 "    <signal name=\"rpmChanged\"/>\n"
 "    <signal name=\"batteryChanged\"/>\n"
-"    <signal name=\"canFail\"/>\n"
-"    <signal name=\"canRestored\"/>\n"
+"    <signal name=\"candisconnected\"/>\n"
+"    <signal name=\"canconnected\"/>\n"
 "    <method name=\"setSpeed\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n"
 "    </method>\n"
@@ -49,8 +49,8 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"setBattery\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n"
 "    </method>\n"
-"    <method name=\"canDisconnected\"/>\n"
-"    <method name=\"checkCanRestored\"/>\n"
+"    <method name=\"candisConnected\"/>\n"
+"    <method name=\"canConnected\"/>\n"
 "    <method name=\"getSpeed\">\n"
 "      <arg direction=\"out\" type=\"d\"/>\n"
 "    </method>\n"
@@ -77,8 +77,8 @@ public: // PROPERTIES
     double speed() const;
 
 public Q_SLOTS: // METHODS
-    void canDisconnected();
-    void checkCanRestored();
+    void canConnected();
+    void candisConnected();
     double getBattery();
     double getRPM();
     double getSpeed();
@@ -87,8 +87,8 @@ public Q_SLOTS: // METHODS
     void setSpeed(double speed);
 Q_SIGNALS: // SIGNALS
     void batteryChanged();
-    void canFail();
-    void canRestored();
+    void canconnected();
+    void candisconnected();
     void rpmChanged();
     void speedChanged();
 };
