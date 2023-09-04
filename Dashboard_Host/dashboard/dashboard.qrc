@@ -12,5 +12,6 @@
         <file>qml/ValueSource.qml</file>
         <file>images/battery.png</file>
         <file>images/images.jpg</file>
+        <file>qml/CanErrorHandler.qml</file>
     </qresource>
 </RCC>

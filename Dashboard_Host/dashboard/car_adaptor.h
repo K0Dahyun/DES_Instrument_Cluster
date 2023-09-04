@@ -49,16 +49,8 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"setBattery\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n"
 "    </method>\n"
-"    <method name=\"candisConnected\"/>\n"
-"    <method name=\"canConnected\"/>\n"
-"    <method name=\"getSpeed\">\n"
-"      <arg direction=\"out\" type=\"d\"/>\n"
-"    </method>\n"
-"    <method name=\"getRPM\">\n"
-"      <arg direction=\"out\" type=\"d\"/>\n"
-"    </method>\n"
-"    <method name=\"getBattery\">\n"
-"      <arg direction=\"out\" type=\"d\"/>\n"
+"    <method name=\"checkCanStatus\">\n"
+"      <arg direction=\"in\" type=\"b\" name=\"canstatus\"/>\n"
 "    </method>\n"
 "  </interface>\n"
         "")
@@ -77,11 +69,7 @@ public: // PROPERTIES
     double speed() const;
 
 public Q_SLOTS: // METHODS
-    void canConnected();
-    void candisConnected();
-    double getBattery();
-    double getRPM();
-    double getSpeed();
+    void checkCanStatus(bool canstatus);
     void setBattery(double battery);
     void setRPM(double rpm);
     void setSpeed(double speed);

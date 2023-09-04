@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Car_t {
-    QByteArrayData data[18];
-    char stringdata0[174];
+    QByteArrayData data[15];
+    char stringdata0[143];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,18 +45,15 @@ QT_MOC_LITERAL(9, 88, 6), // "setRPM"
 QT_MOC_LITERAL(10, 95, 3), // "rpm"
 QT_MOC_LITERAL(11, 99, 10), // "setBattery"
 QT_MOC_LITERAL(12, 110, 7), // "battery"
-QT_MOC_LITERAL(13, 118, 15), // "candisConnected"
-QT_MOC_LITERAL(14, 134, 12), // "canConnected"
-QT_MOC_LITERAL(15, 147, 8), // "getSpeed"
-QT_MOC_LITERAL(16, 156, 6), // "getRPM"
-QT_MOC_LITERAL(17, 163, 10) // "getBattery"
+QT_MOC_LITERAL(13, 118, 14), // "checkCanStatus"
+QT_MOC_LITERAL(14, 133, 9) // "canstatus"
 
     },
     "Car\0speedChanged\0\0rpmChanged\0"
     "batteryChanged\0candisconnected\0"
     "canconnected\0setSpeed\0speed\0setRPM\0"
-    "rpm\0setBattery\0battery\0candisConnected\0"
-    "canConnected\0getSpeed\0getRPM\0getBattery"
+    "rpm\0setBattery\0battery\0checkCanStatus\0"
+    "canstatus"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,29 +63,25 @@ static const uint qt_meta_data_Car[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
-       3,   98, // properties
+       9,   14, // methods
+       3,   76, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x06 /* Public */,
-       3,    0,   80,    2, 0x06 /* Public */,
-       4,    0,   81,    2, 0x06 /* Public */,
-       5,    0,   82,    2, 0x06 /* Public */,
-       6,    0,   83,    2, 0x06 /* Public */,
+       1,    0,   59,    2, 0x06 /* Public */,
+       3,    0,   60,    2, 0x06 /* Public */,
+       4,    0,   61,    2, 0x06 /* Public */,
+       5,    0,   62,    2, 0x06 /* Public */,
+       6,    0,   63,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    1,   84,    2, 0x0a /* Public */,
-       9,    1,   87,    2, 0x0a /* Public */,
-      11,    1,   90,    2, 0x0a /* Public */,
-      13,    0,   93,    2, 0x0a /* Public */,
-      14,    0,   94,    2, 0x0a /* Public */,
-      15,    0,   95,    2, 0x0a /* Public */,
-      16,    0,   96,    2, 0x0a /* Public */,
-      17,    0,   97,    2, 0x0a /* Public */,
+       7,    1,   64,    2, 0x0a /* Public */,
+       9,    1,   67,    2, 0x0a /* Public */,
+      11,    1,   70,    2, 0x0a /* Public */,
+      13,    1,   73,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -101,11 +94,7 @@ static const uint qt_meta_data_Car[] = {
     QMetaType::Void, QMetaType::QReal,    8,
     QMetaType::Void, QMetaType::QReal,   10,
     QMetaType::Void, QMetaType::QReal,   12,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::QReal,
-    QMetaType::QReal,
-    QMetaType::QReal,
+    QMetaType::Void, QMetaType::Bool,   14,
 
  // properties: name, type, flags
        8, QMetaType::QReal, 0x00495001,
@@ -134,14 +123,7 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         case 5: _t->setSpeed((*reinterpret_cast< qreal(*)>(_a[1]))); break;
         case 6: _t->setRPM((*reinterpret_cast< qreal(*)>(_a[1]))); break;
         case 7: _t->setBattery((*reinterpret_cast< qreal(*)>(_a[1]))); break;
-        case 8: _t->candisConnected(); break;
-        case 9: _t->canConnected(); break;
-        case 10: { qreal _r = _t->getSpeed();
-            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
-        case 11: { qreal _r = _t->getRPM();
-            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
-        case 12: { qreal _r = _t->getBattery();
-            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
+        case 8: _t->checkCanStatus((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -228,13 +210,13 @@ int Car::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 9;
     }
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

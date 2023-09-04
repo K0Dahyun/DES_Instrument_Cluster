@@ -2,6 +2,7 @@
 #define CAR_H
 
 #include <QObject>
+#include <QTimer>
 
 class Car : public QObject
 {
@@ -12,23 +13,25 @@ class Car : public QObject
 
 public:
     explicit Car(QObject *parent = nullptr);
+    qreal getSpeed() const;
+    qreal getRPM() const;
+    qreal getBattery() const;
 
 public Q_SLOTS:
     void setSpeed(qreal speed);
     void setRPM(qreal rpm);
     void setBattery(qreal battery);
 
-    void candisConnected();
-    void canConnected();
+    void checkCanStatus(bool canstatus);
+    //void canConnected();
 
-    qreal getSpeed();
-    qreal getRPM();
-    qreal getBattery();
+    //void hadleTimeout();
 
 signals :
     void speedChanged();
     void rpmChanged();
     void batteryChanged();
+
     void candisconnected();
     void canconnected();
 
@@ -36,7 +39,10 @@ private:
     qreal speed;
     qreal rpm;
     qreal battery;
-    bool canStatus; //canstatus true is disconnection
+    bool canstatus;
+    //QTimer* timeoutTime;
+
+    //void runPython();
 };
 
 #endif // CAR_H

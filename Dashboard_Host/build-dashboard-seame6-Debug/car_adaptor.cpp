@@ -51,40 +51,10 @@ double CarAdaptor::speed() const
     return qvariant_cast< double >(parent()->property("speed"));
 }
 
-void CarAdaptor::canConnected()
+void CarAdaptor::checkCanStatus(bool canstatus)
 {
-    // handle method call local.Car.canConnected
-    QMetaObject::invokeMethod(parent(), "canConnected");
-}
-
-void CarAdaptor::candisConnected()
-{
-    // handle method call local.Car.candisConnected
-    QMetaObject::invokeMethod(parent(), "candisConnected");
-}
-
-double CarAdaptor::getBattery()
-{
-    // handle method call local.Car.getBattery
-    double out0;
-    QMetaObject::invokeMethod(parent(), "getBattery", Q_RETURN_ARG(double, out0));
-    return out0;
-}
-
-double CarAdaptor::getRPM()
-{
-    // handle method call local.Car.getRPM
-    double out0;
-    QMetaObject::invokeMethod(parent(), "getRPM", Q_RETURN_ARG(double, out0));
-    return out0;
-}
-
-double CarAdaptor::getSpeed()
-{
-    // handle method call local.Car.getSpeed
-    double out0;
-    QMetaObject::invokeMethod(parent(), "getSpeed", Q_RETURN_ARG(double, out0));
-    return out0;
+    // handle method call local.Car.checkCanStatus
+    QMetaObject::invokeMethod(parent(), "checkCanStatus", Q_ARG(bool, canstatus));
 }
 
 void CarAdaptor::setBattery(double battery)
