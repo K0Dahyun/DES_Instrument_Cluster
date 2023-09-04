@@ -57,6 +57,12 @@ void CarAdaptor::checkCanStatus(bool canstatus)
     QMetaObject::invokeMethod(parent(), "checkCanStatus", Q_ARG(bool, canstatus));
 }
 
+void CarAdaptor::checkDbusStatus()
+{
+    // handle method call local.Car.checkDbusStatus
+    QMetaObject::invokeMethod(parent(), "checkDbusStatus");
+}
+
 void CarAdaptor::setBattery(double battery)
 {
     // handle method call local.Car.setBattery

@@ -14,6 +14,12 @@
     </signal>
     <signal name="canconnected">
     </signal>
+    <signal name="speeddisconnected">
+    </signal>
+    <signal name="rpmdisconnected">
+    </signal>
+    <signal name="batterydisconnected">
+    </signal>
     <method name="setSpeed">
       <arg name="speed" type="d" direction="in"/>
     </method>
@@ -25,6 +31,8 @@
     </method>
     <method name="checkCanStatus">
       <arg name="canstatus" type="b" direction="in"/>
+    </method>
+    <method name="checkDbusStatus">
     </method>
   </interface>
 </node>

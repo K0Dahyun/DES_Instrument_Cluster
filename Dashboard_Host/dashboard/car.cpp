@@ -3,34 +3,34 @@
 #include <QDebug>
 #include <QProcess>
 
-Car::Car(QObject *parent) : QObject(parent), speed(0), rpm(0), battery(0), canstatus(false)
+Car::Car(QObject *parent) : QObject(parent), speed(0), rpm(0), battery(0), canstatus(false), speedUpdated(false), rpmUpdated(false), batteryUpdated(false)
 {
     new CarAdaptor(this);
-/*
+
     timeoutTime = new QTimer(this);
     timeoutTime->setInterval(3000);
-    connect(timeoutTime, &QTimer::timeout, this, &Car::hadleTimeout);
-    connect(this, &Car::speedChanged, timeoutTime, QOverload<>::of(&QTimer::start));
-    connect(this, &Car::rpmChanged, timeoutTime, QOverload<>::of(&QTimer::start));
-    connect(this, &Car::batteryChanged, timeoutTime, QOverload<>::of(&QTimer::start));
-    timeoutTime->start();*/
+    connect(timeoutTime, &QTimer::timeout, this, &Car::checkDbusStatus);
+    timeoutTime->start();
 }
 
 void Car::setSpeed(qreal speed)
 {
     this->speed = speed;
+    speedUpdated = true;
     emit speedChanged();
 }
 
 void Car::setRPM(qreal rpm)
 {
     this->rpm = rpm;
+    rpmUpdated = true;
     emit rpmChanged();
 }
 
 void Car::setBattery(qreal battery)
 {
     this->battery = battery;
+    batteryUpdated = true;
     emit batteryChanged();
 }
 
@@ -43,15 +43,20 @@ void Car::checkCanStatus(bool canstatus) {
         emit canconnected();
     }
 }
-/*
-void Car::canConnected() {
-    emit canconnected();
-}
 
-void Car::hadleTimeout() {
-    timeoutTime->stop();
-    dbusdisconnected();
-}*/
+void Car::checkDbusStatus()
+{
+    if(!speedUpdated)
+        emit speeddisconnected();
+    if(!rpmUpdated)
+        emit rpmdisconnected();
+    if(!batteryUpdated)
+        emit batterydisconnected();
+
+    speedUpdated = false;
+    rpmUpdated = false;
+    batteryUpdated = false;
+}
 
 qreal Car::getSpeed() const
 {

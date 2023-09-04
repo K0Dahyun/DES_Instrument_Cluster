@@ -7,7 +7,7 @@
 class Car : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(qreal speed READ getSpeed NOTIFY rpmChanged)
+    Q_PROPERTY(qreal speed READ getSpeed NOTIFY speedChanged)
     Q_PROPERTY(qreal rpm READ getRPM NOTIFY rpmChanged)
     Q_PROPERTY(qreal battery READ getBattery NOTIFY batteryChanged)
 
@@ -23,9 +23,8 @@ public Q_SLOTS:
     void setBattery(qreal battery);
 
     void checkCanStatus(bool canstatus);
-    //void canConnected();
 
-    //void hadleTimeout();
+    void checkDbusStatus();
 
 signals :
     void speedChanged();
@@ -35,14 +34,21 @@ signals :
     void candisconnected();
     void canconnected();
 
+    void speeddisconnected();
+    void rpmdisconnected();
+    void batterydisconnected();
+
 private:
     qreal speed;
     qreal rpm;
     qreal battery;
-    bool canstatus;
-    //QTimer* timeoutTime;
 
-    //void runPython();
+    bool canstatus;
+
+    QTimer* timeoutTime;
+    bool speedUpdated;
+    bool rpmUpdated;
+    bool batteryUpdated;
 };
 
 #endif // CAR_H

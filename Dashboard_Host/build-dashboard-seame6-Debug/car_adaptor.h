@@ -40,6 +40,9 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <signal name=\"batteryChanged\"/>\n"
 "    <signal name=\"candisconnected\"/>\n"
 "    <signal name=\"canconnected\"/>\n"
+"    <signal name=\"speeddisconnected\"/>\n"
+"    <signal name=\"rpmdisconnected\"/>\n"
+"    <signal name=\"batterydisconnected\"/>\n"
 "    <method name=\"setSpeed\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n"
 "    </method>\n"
@@ -52,6 +55,7 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"checkCanStatus\">\n"
 "      <arg direction=\"in\" type=\"b\" name=\"canstatus\"/>\n"
 "    </method>\n"
+"    <method name=\"checkDbusStatus\"/>\n"
 "  </interface>\n"
         "")
 public:
@@ -70,15 +74,19 @@ public: // PROPERTIES
 
 public Q_SLOTS: // METHODS
     void checkCanStatus(bool canstatus);
+    void checkDbusStatus();
     void setBattery(double battery);
     void setRPM(double rpm);
     void setSpeed(double speed);
 Q_SIGNALS: // SIGNALS
     void batteryChanged();
+    void batterydisconnected();
     void canconnected();
     void candisconnected();
     void rpmChanged();
+    void rpmdisconnected();
     void speedChanged();
+    void speeddisconnected();
 };
 
 #endif
