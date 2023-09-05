@@ -8,7 +8,7 @@ Car::Car(QObject *parent) : QObject(parent), speed(0), rpm(0), battery(0), canst
     new CarAdaptor(this);
 
     timeoutTime = new QTimer(this);
-    timeoutTime->setInterval(3000);
+    timeoutTime->setInterval(1000);
     connect(timeoutTime, &QTimer::timeout, this, &Car::checkDbusStatus);
     timeoutTime->start();
 }
@@ -36,16 +36,22 @@ void Car::setBattery(qreal battery)
 
 void Car::checkCanStatus(bool canstatus) {
     if (canstatus){
+        timeoutTime->stop();
         qDebug() << "can disconnect ";
         emit candisconnected();
     }
     else{
+        if(!timeoutTime->isActive()){
+            timeoutTime->start();
+        }
+        qDebug() << "can reconneted ";
         emit canconnected();
     }
 }
 
 void Car::checkDbusStatus()
 {
+    qDebug() << "HAHAHAHAHAHA ";
     if(!speedUpdated)
         emit speeddisconnected();
     if(!rpmUpdated)

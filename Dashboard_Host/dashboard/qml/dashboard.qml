@@ -105,7 +105,10 @@ Window {
         Connections {
             target: car // This assumes you've set a "car" context property from C++.
             onCandisconnected: {
-                cantimeoutText.visible = true // Show the message when the signal is received.
+                cantimeoutText.visible = true
+                speedtimeoutText.visible = false
+                rpmtimeoutText.visible = false
+                batterytimeoutText.visible = false
             }
             onCanconnected: {
                 cantimeoutText.visible = false
