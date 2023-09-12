@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QTimer>
+#include <QElapsedTimer> // 추가
+#include <QVector>       // 추가
 
 class Car : public QObject
 {
@@ -23,10 +25,9 @@ public Q_SLOTS:
     void setBattery(qreal battery);
 
     void checkCanStatus(bool canstatus);
-
     void checkDbusStatus();
 
-signals :
+signals:
     void speedChanged();
     void rpmChanged();
     void batteryChanged();
@@ -42,13 +43,15 @@ private:
     qreal speed;
     qreal rpm;
     qreal battery;
-
     bool canstatus;
 
     QTimer* timeoutTime;
     bool speedUpdated;
     bool rpmUpdated;
     bool batteryUpdated;
+
+    QElapsedTimer elapsedTimer;
+    QVector<qint64> intervals;
 };
 
 #endif // CAR_H

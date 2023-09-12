@@ -721,6 +721,7 @@ qrc_dashboard.cpp: ../dashboard/dashboard.qrc \
 		../dashboard/qml/TachometerStyle.qml \
 		../dashboard/qml/ValueSource.qml \
 		../dashboard/images/battery.png \
+		../dashboard/images/warning.jpg \
 		../dashboard/images/temperature-icon.png \
 		../dashboard/images/images.jpg \
 		../dashboard/images/fuel-icon.png \
@@ -874,6 +875,9 @@ moc_car.cpp: ../dashboard/car.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QTimer \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qtimer.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qbasictimer.h \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QElapsedTimer \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qelapsedtimer.h \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QVector \
 		moc_predefs.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/bin/moc
 	/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard_Host/build-dashboard-seame6-Debug/moc_predefs.h -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/mkspecs/devices/linux-rasp-pi4-aarch64 -I/home/seame-workstation08/Project-2/Dashboard_Host/dashboard -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtQuick -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtGui -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtQmlModels -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtQml -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtNetwork -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore -I. -I/usr/aarch64-linux-gnu/include/c++/9 -I/usr/aarch64-linux-gnu/include/c++/9/aarch64-linux-gnu -I/usr/aarch64-linux-gnu/include/c++/9/backward -I/usr/lib/gcc-cross/aarch64-linux-gnu/9/include -I/usr/aarch64-linux-gnu/include -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/sysroot/usr/include/aarch64-linux-gnu -I/home/seame-workstation08/Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/sysroot/usr/include ../dashboard/car.h -o moc_car.cpp
@@ -1271,6 +1275,9 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QTimer \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qtimer.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qbasictimer.h \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QElapsedTimer \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qelapsedtimer.h \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QVector \
 		../dashboard/car_adaptor.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/QtDBus \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/QtDBusDepends \
@@ -1325,7 +1332,6 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qcryptographichash.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qdatastream.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qdeadlinetimer.h \
-		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qelapsedtimer.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qdir.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qfileinfo.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qfile.h \
@@ -1439,8 +1445,7 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/qdbusunixfiledescriptor.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/qdbusvirtualobject.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/qtdbusversion.h \
-		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QDebug \
-		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QProcess
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../dashboard/car.cpp
 
 main.o: ../dashboard/main.cpp ../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtGui/QGuiApplication \
@@ -1549,6 +1554,9 @@ main.o: ../dashboard/main.cpp ../../../Documents/Qt-CrossCompile-RaspberryPi/ras
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QTimer \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qtimer.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qbasictimer.h \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QElapsedTimer \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/qelapsedtimer.h \
+		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtCore/QVector \
 		../dashboard/busmanager.h \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/QDBusConnection \
 		../../../Documents/Qt-CrossCompile-RaspberryPi/raspberrypi4/qt5.15/include/QtDBus/qdbusconnection.h \

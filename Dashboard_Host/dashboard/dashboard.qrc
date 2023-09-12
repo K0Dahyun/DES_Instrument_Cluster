@@ -13,5 +13,6 @@
         <file>images/battery.png</file>
         <file>images/images.jpg</file>
         <file>qml/CanErrorHandler.qml</file>
+        <file>images/warning.jpg</file>
     </qresource>
 </RCC>

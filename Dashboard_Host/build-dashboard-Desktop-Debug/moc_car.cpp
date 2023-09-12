@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Car_t {
-    QByteArrayData data[18];
-    char stringdata0[174];
+    QByteArrayData data[19];
+    char stringdata0[213];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,24 +39,27 @@ QT_MOC_LITERAL(3, 18, 10), // "rpmChanged"
 QT_MOC_LITERAL(4, 29, 14), // "batteryChanged"
 QT_MOC_LITERAL(5, 44, 15), // "candisconnected"
 QT_MOC_LITERAL(6, 60, 12), // "canconnected"
-QT_MOC_LITERAL(7, 73, 8), // "setSpeed"
-QT_MOC_LITERAL(8, 82, 5), // "speed"
-QT_MOC_LITERAL(9, 88, 6), // "setRPM"
-QT_MOC_LITERAL(10, 95, 3), // "rpm"
-QT_MOC_LITERAL(11, 99, 10), // "setBattery"
-QT_MOC_LITERAL(12, 110, 7), // "battery"
-QT_MOC_LITERAL(13, 118, 15), // "candisConnected"
-QT_MOC_LITERAL(14, 134, 12), // "canConnected"
-QT_MOC_LITERAL(15, 147, 8), // "getSpeed"
-QT_MOC_LITERAL(16, 156, 6), // "getRPM"
-QT_MOC_LITERAL(17, 163, 10) // "getBattery"
+QT_MOC_LITERAL(7, 73, 17), // "speeddisconnected"
+QT_MOC_LITERAL(8, 91, 15), // "rpmdisconnected"
+QT_MOC_LITERAL(9, 107, 19), // "batterydisconnected"
+QT_MOC_LITERAL(10, 127, 8), // "setSpeed"
+QT_MOC_LITERAL(11, 136, 5), // "speed"
+QT_MOC_LITERAL(12, 142, 6), // "setRPM"
+QT_MOC_LITERAL(13, 149, 3), // "rpm"
+QT_MOC_LITERAL(14, 153, 10), // "setBattery"
+QT_MOC_LITERAL(15, 164, 7), // "battery"
+QT_MOC_LITERAL(16, 172, 14), // "checkCanStatus"
+QT_MOC_LITERAL(17, 187, 9), // "canstatus"
+QT_MOC_LITERAL(18, 197, 15) // "checkDbusStatus"
 
     },
     "Car\0speedChanged\0\0rpmChanged\0"
     "batteryChanged\0candisconnected\0"
-    "canconnected\0setSpeed\0speed\0setRPM\0"
-    "rpm\0setBattery\0battery\0candisConnected\0"
-    "canConnected\0getSpeed\0getRPM\0getBattery"
+    "canconnected\0speeddisconnected\0"
+    "rpmdisconnected\0batterydisconnected\0"
+    "setSpeed\0speed\0setRPM\0rpm\0setBattery\0"
+    "battery\0checkCanStatus\0canstatus\0"
+    "checkDbusStatus"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,11 +70,11 @@ static const uint qt_meta_data_Car[] = {
        0,       // classname
        0,    0, // classinfo
       13,   14, // methods
-       3,   98, // properties
+       3,  100, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       5,       // signalCount
+       8,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
        1,    0,   79,    2, 0x06 /* Public */,
@@ -79,16 +82,16 @@ static const uint qt_meta_data_Car[] = {
        4,    0,   81,    2, 0x06 /* Public */,
        5,    0,   82,    2, 0x06 /* Public */,
        6,    0,   83,    2, 0x06 /* Public */,
+       7,    0,   84,    2, 0x06 /* Public */,
+       8,    0,   85,    2, 0x06 /* Public */,
+       9,    0,   86,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    1,   84,    2, 0x0a /* Public */,
-       9,    1,   87,    2, 0x0a /* Public */,
-      11,    1,   90,    2, 0x0a /* Public */,
-      13,    0,   93,    2, 0x0a /* Public */,
-      14,    0,   94,    2, 0x0a /* Public */,
-      15,    0,   95,    2, 0x0a /* Public */,
-      16,    0,   96,    2, 0x0a /* Public */,
-      17,    0,   97,    2, 0x0a /* Public */,
+      10,    1,   87,    2, 0x0a /* Public */,
+      12,    1,   90,    2, 0x0a /* Public */,
+      14,    1,   93,    2, 0x0a /* Public */,
+      16,    1,   96,    2, 0x0a /* Public */,
+      18,    0,   99,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -96,24 +99,24 @@ static const uint qt_meta_data_Car[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QReal,    8,
-    QMetaType::Void, QMetaType::QReal,   10,
-    QMetaType::Void, QMetaType::QReal,   12,
+    QMetaType::Void, QMetaType::QReal,   11,
+    QMetaType::Void, QMetaType::QReal,   13,
+    QMetaType::Void, QMetaType::QReal,   15,
+    QMetaType::Void, QMetaType::Bool,   17,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::QReal,
-    QMetaType::QReal,
-    QMetaType::QReal,
 
  // properties: name, type, flags
-       8, QMetaType::QReal, 0x00495001,
-      10, QMetaType::QReal, 0x00495001,
-      12, QMetaType::QReal, 0x00495001,
+      11, QMetaType::QReal, 0x00495001,
+      13, QMetaType::QReal, 0x00495001,
+      15, QMetaType::QReal, 0x00495001,
 
  // properties: notify_signal_id
-       1,
+       0,
        1,
        2,
 
@@ -131,17 +134,14 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         case 2: _t->batteryChanged(); break;
         case 3: _t->candisconnected(); break;
         case 4: _t->canconnected(); break;
-        case 5: _t->setSpeed((*reinterpret_cast< qreal(*)>(_a[1]))); break;
-        case 6: _t->setRPM((*reinterpret_cast< qreal(*)>(_a[1]))); break;
-        case 7: _t->setBattery((*reinterpret_cast< qreal(*)>(_a[1]))); break;
-        case 8: _t->candisConnected(); break;
-        case 9: _t->canConnected(); break;
-        case 10: { qreal _r = _t->getSpeed();
-            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
-        case 11: { qreal _r = _t->getRPM();
-            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
-        case 12: { qreal _r = _t->getBattery();
-            if (_a[0]) *reinterpret_cast< qreal*>(_a[0]) = std::move(_r); }  break;
+        case 5: _t->speeddisconnected(); break;
+        case 6: _t->rpmdisconnected(); break;
+        case 7: _t->batterydisconnected(); break;
+        case 8: _t->setSpeed((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 9: _t->setRPM((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 10: _t->setBattery((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        case 11: _t->checkCanStatus((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 12: _t->checkDbusStatus(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -178,6 +178,27 @@ void Car::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
             using _t = void (Car::*)();
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::canconnected)) {
                 *result = 4;
+                return;
+            }
+        }
+        {
+            using _t = void (Car::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::speeddisconnected)) {
+                *result = 5;
+                return;
+            }
+        }
+        {
+            using _t = void (Car::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::rpmdisconnected)) {
+                *result = 6;
+                return;
+            }
+        }
+        {
+            using _t = void (Car::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Car::batterydisconnected)) {
+                *result = 7;
                 return;
             }
         }
@@ -284,6 +305,24 @@ void Car::candisconnected()
 void Car::canconnected()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
+}
+
+// SIGNAL 5
+void Car::speeddisconnected()
+{
+    QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
+}
+
+// SIGNAL 6
+void Car::rpmdisconnected()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
+}
+
+// SIGNAL 7
+void Car::batterydisconnected()
+{
+    QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -677,10 +677,12 @@ qrc_dashboard.cpp: ../dashboard/dashboard.qrc \
 		../dashboard/qml/TurnIndicator.qml \
 		../dashboard/qml/dashboard.qml \
 		../dashboard/qml/IconGaugeStyle.qml \
+		../dashboard/qml/CanErrorHandler.qml \
 		../dashboard/qml/DashboardGaugeStyle.qml \
 		../dashboard/qml/TachometerStyle.qml \
 		../dashboard/qml/ValueSource.qml \
 		../dashboard/images/battery.png \
+		../dashboard/images/warning.jpg \
 		../dashboard/images/temperature-icon.png \
 		../dashboard/images/images.jpg \
 		../dashboard/images/fuel-icon.png \
@@ -831,6 +833,12 @@ moc_car.cpp: ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QElapsedTimer \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		moc_predefs.h \
 		../../../Qt/5.15.2/gcc_64/bin/moc
 	/home/seame-workstation08/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/seame-workstation08/Project-2/Dashboard_Host/build-dashboard-Desktop-Debug/moc_predefs.h -I/home/seame-workstation08/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/seame-workstation08/Project-2/Dashboard_Host/dashboard -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQuick -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtGui -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQmlModels -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtQml -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtNetwork -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtDBus -I/home/seame-workstation08/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../dashboard/car.h -o moc_car.cpp
@@ -1225,6 +1233,12 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QElapsedTimer \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		../dashboard/car_adaptor.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/QtDBus \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/QtDBusDepends \
@@ -1253,7 +1267,6 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qanimationgroup.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qarraydataops.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qarraydatapointer.h \
-		../../../Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qbitarray.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qbuffer.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qbytearraymatcher.h \
@@ -1280,7 +1293,6 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qdir.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qfileinfo.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qfile.h \
@@ -1365,7 +1377,6 @@ car.o: ../dashboard/car.cpp ../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qthreadpool.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qthreadstorage.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qtimeline.h \
-		../../../Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qtimezone.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qtranslator.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
@@ -1501,6 +1512,12 @@ main.o: ../dashboard/main.cpp ../../../Qt/5.15.2/gcc_64/include/QtGui/QGuiApplic
 		../../../Qt/5.15.2/gcc_64/include/QtGui/qfontdatabase.h \
 		../dashboard/car.h \
 		../../../Qt/5.15.2/gcc_64/include/QtCore/QObject \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QElapsedTimer \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		../dashboard/busmanager.h \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/QDBusConnection \
 		../../../Qt/5.15.2/gcc_64/include/QtDBus/qdbusconnection.h \

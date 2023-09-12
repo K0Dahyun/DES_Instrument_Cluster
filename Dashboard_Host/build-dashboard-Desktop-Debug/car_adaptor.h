@@ -32,9 +32,17 @@ class CarAdaptor: public QDBusAbstractAdaptor
     Q_CLASSINFO("D-Bus Interface", "local.Car")
     Q_CLASSINFO("D-Bus Introspection", ""
 "  <interface name=\"local.Car\">\n"
+"    <property access=\"read\" type=\"d\" name=\"speed\"/>\n"
+"    <property access=\"read\" type=\"d\" name=\"rpm\"/>\n"
+"    <property access=\"read\" type=\"d\" name=\"battery\"/>\n"
 "    <signal name=\"speedChanged\"/>\n"
 "    <signal name=\"rpmChanged\"/>\n"
 "    <signal name=\"batteryChanged\"/>\n"
+"    <signal name=\"candisconnected\"/>\n"
+"    <signal name=\"canconnected\"/>\n"
+"    <signal name=\"speeddisconnected\"/>\n"
+"    <signal name=\"rpmdisconnected\"/>\n"
+"    <signal name=\"batterydisconnected\"/>\n"
 "    <method name=\"setSpeed\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"speed\"/>\n"
 "    </method>\n"
@@ -44,6 +52,10 @@ class CarAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"setBattery\">\n"
 "      <arg direction=\"in\" type=\"d\" name=\"battery\"/>\n"
 "    </method>\n"
+"    <method name=\"checkCanStatus\">\n"
+"      <arg direction=\"in\" type=\"b\" name=\"canstatus\"/>\n"
+"    </method>\n"
+"    <method name=\"checkDbusStatus\"/>\n"
 "  </interface>\n"
         "")
 public:
@@ -51,14 +63,30 @@ public:
     virtual ~CarAdaptor();
 
 public: // PROPERTIES
+    Q_PROPERTY(double battery READ battery)
+    double battery() const;
+
+    Q_PROPERTY(double rpm READ rpm)
+    double rpm() const;
+
+    Q_PROPERTY(double speed READ speed)
+    double speed() const;
+
 public Q_SLOTS: // METHODS
+    void checkCanStatus(bool canstatus);
+    void checkDbusStatus();
     void setBattery(double battery);
     void setRPM(double rpm);
     void setSpeed(double speed);
 Q_SIGNALS: // SIGNALS
     void batteryChanged();
+    void batterydisconnected();
+    void canconnected();
+    void candisconnected();
     void rpmChanged();
+    void rpmdisconnected();
     void speedChanged();
+    void speeddisconnected();
 };
 
 #endif

@@ -1,7 +1,6 @@
 import QtQuick 2.2
 import QtQuick.Window 2.1
 import QtQuick.Controls 1.4
-import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
 
 Window {
@@ -9,14 +8,13 @@ Window {
     visible: true
     width: 1280
     height: 400
-    //visibility: Window.FullScreen
     color: "#161616"
     title: "INSTRUMENT CLUSTER"
 
     Image {
         id: background
-        width: 1280
-        height: 400
+        width: parent.width
+        height: parent.height
         source: "qrc:/images/images.jpg"
     }
 
@@ -24,8 +22,6 @@ Window {
         id: valueSource
     }
 
-    // Dashboards are typically in a landscape orientation, so we need to ensure
-    // our height is never greater than our width.
     Item {
         id: container
         width: root.width
@@ -48,8 +44,8 @@ Window {
                     minimumValue: 0
                     maximumValue: 100
                     y: parent.height / 2 - height / 2 - container.height * 0.01
-                    width: parent.width*1
-                    height: parent.height *1
+                    width: parent.width
+                    height: parent.height
 
                     style: IconGaugeStyle {
                         icon: "qrc:/images/battery.png"
@@ -58,8 +54,7 @@ Window {
 
                     Behavior on value {
                         NumberAnimation {
-                        duration: 200
-                        //easing.type: Easing.OutQuad
+                            duration: 200
                         }
                     }
                 }
@@ -77,10 +72,9 @@ Window {
 
                 Behavior on value {
                     NumberAnimation {
-                    duration: 200
+                        duration: 200
                     }
                 }
-
             }
 
             CircularGauge {
@@ -95,17 +89,17 @@ Window {
 
                 Behavior on value {
                     NumberAnimation {
-                    duration: 200
+                        duration: 200
                     }
                 }
             }
         }
 
-
         Connections {
             target: car // This assumes you've set a "car" context property from C++.
             onCandisconnected: {
                 cantimeoutText.visible = true
+                canimage.visible = true
                 speedtimeoutText.visible = false
                 rpmtimeoutText.visible = false
                 batterytimeoutText.visible = false
@@ -141,7 +135,22 @@ Window {
             color: "white"
             visible: false // Initially, the text is hidden.
             anchors.topMargin: 50
+            Image {
+                id: canimage
+                source: "qrc:/images/warning.jpg"
+                width:16
+                height:16
+                anchors.left: cantimeoutText.right
+                anchors.verticalCenter: cantimeoutText.verticalCenter
+
+
+            }
+
+
+
+
         }
+
 
         Text {
             id: speedtimeoutText
@@ -151,6 +160,16 @@ Window {
             color: "white"
             visible: false // Initially, the text is hidden.
             anchors.margins: 5 // Adjust this value as needed for spacing
+            Image {
+                id: speedimage
+                source: "qrc:/images/warning.jpg"
+                width:16
+                height:16
+                anchors.left: speedtimeoutText.right
+                anchors.verticalCenter: speedtimeoutText.verticalCenter
+
+
+            }
         }
 
         Text {
@@ -161,6 +180,15 @@ Window {
             color: "white"
             visible: false // Initially, the text is hidden.
             anchors.margins: 5 // Adjust this value as needed for spacing
+            Image {
+                id: rpmimage
+                source: "qrc:/images/warning.jpg"
+                width:16
+                height:16
+                anchors.left: rpmtimeoutText.right
+                anchors.verticalCenter: rpmtimeoutText.verticalCenter
+            }
+
         }
 
         Text {
@@ -171,6 +199,15 @@ Window {
             color: "white"
             visible: false // Initially, the text is hidden.
             anchors.margins: 5 // Adjust this value as needed for spacing
+            Image {
+                id: batteryimage
+                source: "qrc:/images/warning.jpg"
+                width:16
+                height:16
+                anchors.left: batterytimeoutText.right
+                anchors.verticalCenter: batteryText.verticalCenter
+            }
+
         }
     }
 }

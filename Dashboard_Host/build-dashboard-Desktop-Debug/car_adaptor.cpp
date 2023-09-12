@@ -33,6 +33,36 @@ CarAdaptor::~CarAdaptor()
     // destructor
 }
 
+double CarAdaptor::battery() const
+{
+    // get the value of property battery
+    return qvariant_cast< double >(parent()->property("battery"));
+}
+
+double CarAdaptor::rpm() const
+{
+    // get the value of property rpm
+    return qvariant_cast< double >(parent()->property("rpm"));
+}
+
+double CarAdaptor::speed() const
+{
+    // get the value of property speed
+    return qvariant_cast< double >(parent()->property("speed"));
+}
+
+void CarAdaptor::checkCanStatus(bool canstatus)
+{
+    // handle method call local.Car.checkCanStatus
+    QMetaObject::invokeMethod(parent(), "checkCanStatus", Q_ARG(bool, canstatus));
+}
+
+void CarAdaptor::checkDbusStatus()
+{
+    // handle method call local.Car.checkDbusStatus
+    QMetaObject::invokeMethod(parent(), "checkDbusStatus");
+}
+
 void CarAdaptor::setBattery(double battery)
 {
     // handle method call local.Car.setBattery
