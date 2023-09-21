@@ -132,7 +132,7 @@ CircularGaugeStyle {
             readonly property int kphInt: control.value
         }
         Text {
-            text: "km/h"
+            text: "cm/s"
             color: "white"
             font.pixelSize: toPixels(0.09)
             anchors.top: speedText.bottom

@@ -10,6 +10,7 @@ Window {
     height: 400
     color: "#161616"
     title: "INSTRUMENT CLUSTER"
+    visibility: Window.FullScreen
 
     Image {
         id: background

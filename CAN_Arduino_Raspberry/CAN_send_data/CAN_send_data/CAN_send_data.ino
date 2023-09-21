@@ -39,6 +39,7 @@ void packFloat(byte *data, float value) {
     byte *valueBytes = (byte*)&value;  
     for (int i = 0; i < sizeof(float); i++) {
         data[i] = valueBytes[i];
+        Serial.print(data[i]);
     }
 }
 
