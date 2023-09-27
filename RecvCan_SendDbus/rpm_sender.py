@@ -17,15 +17,15 @@ class DataReceiver:
         self.kf = KalmanFilter(initial_state_mean=0, n_dim_obs=1)
         self.kf = self.kf.em(np.zeros(filter_size), n_iter=5)
         self.kf_state = self.kf.initial_state_mean
-        
+    
     def getdata(self):
         msg = self.can.recv(timeout=0.2)
         if msg is None : 
             print("Can disconnect")
             return None
 
-        speed = struct.unpack('f', msg.data[4:8])[0]
-        return speed
+        rpm = struct.unpack('f', msg.data[0:4])[0]
+        return rpm
 
     def kalman_filter(self, measurement):
         filtered_state_mean, filtered_state_covariance = self.kf.filter_update(
@@ -46,13 +46,13 @@ if __name__ == "__main__":
     receiver = DataReceiver()
 
     while 1:
-        speed = receiver.getdata()
+        rpm = receiver.getdata()
 
-        if speed is None :
+        if rpm is None :
             car_interface.checkCanStatus(True)
 
         else :
             car_interface.checkCanStatus(False)
-            filtering_Speed_data = receiver.kalman_filter(speed)
-            print(filtering_Speed_data)
-            car_interface.setSpeed(filtering_Speed_data)
+            filtering_RPM_data = receiver.kalman_filter(rpm)
+            print(filtering_RPM_data)
+            car_interface.setRPM(filtering_RPM_data)

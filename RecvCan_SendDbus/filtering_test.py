@@ -1,18 +1,16 @@
 import os
 import can
 import time
-from piracer.vehicles import PiRacerStandard
+import struct
 from pykalman import KalmanFilter
 import matplotlib.pyplot as plt
 import numpy as np
 
-piracer = PiRacerStandard()
 CAN_ID = "can0"
 
 class DataReceiver:
     def __init__(self, filter_size=5):
-        os.system(f'sudo ifconfig {CAN_ID} down')
-        os.system(f'sudo ip link set {CAN_ID} up type can bitrate 500000 dbitrate 8000000 restart-ms 1000 berr-reporting on fd on')
+
         self.can = can.interface.Bus(channel = CAN_ID, bustype = 'socketcan')
 
         # moving_average
@@ -28,13 +26,14 @@ class DataReceiver:
         self.kf = self.kf.em(np.zeros(filter_size), n_iter=5)
         self.kf_state = self.kf.initial_state_mean
 
-    def getRPM(self):
-        msg = self.can.recv()
-        if msg is None:
-            return "No message recieved"
-        rpm = msg.data[0] + msg.data[1]*256
-        speed = msg.data[2] + msg.data[3]*256
-        return rpm, speed
+    def getdata(self):
+        msg = self.can.recv(timeout=0.2)
+        if msg is None : 
+            print("Can disconnect")
+            return None
+
+        speed = struct.unpack('f', msg.data[4:8])[0]
+        return speed
 
     def moving_average(self, data):
         self.data_queue.append(data) 
@@ -96,7 +95,8 @@ if __name__ == "__main__":
     start = time.time()
 
     while time.time() - start < 60: 
-        rpm, speed = receiver.getRPM()
+        speed = receiver.getdata()
+        print(type(speed))
         if isinstance(speed, int): 
             moving_average_data = receiver.moving_average(speed)
             low_pass_data = receiver.low_pass_filter(speed)

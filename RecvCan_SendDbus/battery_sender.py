@@ -6,7 +6,6 @@ import dbus.service
 from piracer.vehicles import PiRacerStandard
 
 piracer = PiRacerStandard()
-piracer.set_throttle_percent(0.4)
 
 class DataReceiver:
     def __init__(self, filter_size=30):
@@ -28,15 +27,19 @@ class DataReceiver:
 
 if __name__ == "__main__":
 
+
     bus=dbus.SessionBus()
     service = bus.get_object("org.example.CarExample","/Car")
     car_interface = dbus.Interface(service,"local.Car")
+
 
     receiver = DataReceiver()
     moving_average_list = []
 
     while 1: 
         raw_data=receiver.getBattery()
+        print(raw_data)
+
         if isinstance(raw_data, int):
             if receiver.filter_size == 30:
                 filtering_data = receiver.moving_average(raw_data)
@@ -44,5 +47,6 @@ if __name__ == "__main__":
                 car_interface.setBattery(filtering_data)
             else:
                 car_interface.setBattery(raw_data)
-        time.sleep(1)
+
+        time.sleep(0.1)
 
